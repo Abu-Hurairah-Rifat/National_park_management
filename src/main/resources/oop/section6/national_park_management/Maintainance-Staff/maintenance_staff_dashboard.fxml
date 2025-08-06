@@ -1,14 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="oop.section6.national_park_management.MaintenanceStaff"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="448.0" prefWidth="600.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.PermitOfficerDashboard">
+   <children>
+      <Label alignment="CENTER" layoutX="132.0" layoutY="36.0" text="Maintenance Staff Dashboard" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="26.0" />
+         </font>
+      </Label>
+      <Button cache="true" layoutX="74.0" layoutY="100.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="Issue new Permit" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="315.0" layoutY="100.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="View Permits" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="74.0" layoutY="180.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="Issue new Permit" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="315.0" layoutY="180.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="View Permits" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="74.0" layoutY="268.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="Issue new Permit" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="315.0" layoutY="268.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="View Permits" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="74.0" layoutY="354.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="Issue new Permit" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="315.0" layoutY="354.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="View Permits" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>
