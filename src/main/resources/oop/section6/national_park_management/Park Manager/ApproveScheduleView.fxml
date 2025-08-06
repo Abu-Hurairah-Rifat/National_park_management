@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="oop.section6.national_park_management.ApproveScheduleController"
+            prefWidth="650" prefHeight="600">
+
+    <top>
+        <Label text="Approve Schedules"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"
+               BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+        </Label>
+    </top>
+
+    <center>
+        <VBox spacing="15" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <TableView fx:id="scheduleTable" prefHeight="400" prefWidth="600">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                    <TableColumn fx:id="colRanger" text="Ranger Name" prefWidth="120"/>
+                    <TableColumn fx:id="colDate" text="Date" prefWidth="100"/>
+                    <TableColumn fx:id="colTimeSlot" text="Time Slot" prefWidth="100"/>
+                    <TableColumn fx:id="colZone" text="Zone" prefWidth="100"/>
+                    <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Button fx:id="approveBtn" text="Approve" prefWidth="120"/>
+                <Button fx:id="rejectBtn" text="Reject" prefWidth="120"/>
+                <Button fx:id="refreshBtn" text="Refresh" prefWidth="120"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
