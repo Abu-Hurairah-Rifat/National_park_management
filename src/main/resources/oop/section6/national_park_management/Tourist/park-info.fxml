@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<VBox prefHeight="600.0" prefWidth="700.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.Tourist.ParkInfoController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <Label text="Park Information">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <TitledPane animated="false" text="Operating Hours">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <content>
+                <GridPane hgap="10.0" vgap="5.0">
+                    <padding>
+                        <Insets top="10.0" />
+                    </padding>
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Saturday - Thursday:" />
+                        <Label text="9:00 AM - 5:00 PM" GridPane.columnIndex="1" />
+                        <Label text="Friday:" GridPane.rowIndex="1" />
+                        <Label text="Closed" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    </children>
+                </GridPane>
+            </content>
+        </TitledPane>
+        <TitledPane animated="false" text="Entry Fees">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <content>
+                <GridPane hgap="10.0" vgap="5.0">
+                    <padding>
+                        <Insets top="10.0" />
+                    </padding>
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Adult (Local):" />
+                        <Label text="50 BDT" GridPane.columnIndex="1" />
+                        <Label text="Child (Under 12):" GridPane.rowIndex="1" />
+                        <Label text="20 BDT" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Foreign National:" GridPane.rowIndex="2" />
+                        <Label text="500 BDT" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    </children>
+                </GridPane>
+            </content>
+        </TitledPane>
+        <TitledPane animated="false" text="Emergency Contacts">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <content>
+                <VBox spacing="8.0">
+                    <padding>
+                        <Insets top="10.0" />
+                    </padding>
+                    <children>
+                        <Label text="Park Office: +880 171 234 5678" />
+                        <Label text="First Aid Station: +880 172 345 6789" />
+                        <Label text="Security Desk: +880 173 456 7890" />
+                    </children>
+                </VBox>
+            </content>
+        </TitledPane>
+        <Label text="Note: This information is saved for offline access." textFill="GRAY" VBox.vgrow="ALWAYS">
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </Label>
+    </children>
+</VBox>

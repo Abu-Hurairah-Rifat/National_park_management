@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="800.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.Tourist.WildlifeChecklistController">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+    <children>
+        <Label text="Wildlife Checklist">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <children>
+                <Label text="Checklist Progress:" />
+                <ProgressBar fx:id="progress" prefWidth="200.0" progress="0.0" />
+            </children>
+        </HBox>
+        <SplitPane dividerPositions="0.4" VBox.vgrow="ALWAYS">
+            <items>
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Species List (Check if spotted):" />
+                        <ListView fx:id="speciesListView" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+                <VBox alignment="TOP_CENTER" spacing="10.0">
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                    <children>
+                        <Label text="Species Details">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <ImageView fx:id="speciesImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <TextArea fx:id="speciesDetailsArea" editable="false" wrapText="true" />
+                    </children>
+                </VBox>
+            </items>
+        </SplitPane>
+        <TitledPane animated="false" text="My Achievements">
+            <content>
+                <FlowPane fx:id="achievementsPane" hgap="10.0" vgap="10.0" />
+            </content>
+        </TitledPane>
+    </children>
+</VBox>
