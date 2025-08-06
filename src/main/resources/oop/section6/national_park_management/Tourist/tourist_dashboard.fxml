@@ -1,14 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="oop.section6.national_park_management.Tourist.TouristDashboard"
-            prefHeight="400.0" prefWidth="600.0">
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.Tourist.TouristDashboardController">
+    <left>
+        <VBox prefWidth="250.0" spacing="10.0" style="-fx-background-color: #34495e;">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <children>
+                <Label text="Tourist Menu" textFill="white">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+                </Label>
+                <Separator />
+                <Button fx:id="purchaseTicketsButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handlePurchaseTicketsClick" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Purchase Tickets" />
+                <Button fx:id="manageTicketsButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleManageTicketsClick" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Manage My Tickets" />
+                <Button fx:id="findRateGuideButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleFindRateGuideClick" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Find &amp; Rate Guides" />
+                <Button fx:id="planItineraryButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handlePlanItineraryClick" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Plan My Visit" />
+                <Button fx:id="provideFeedbackButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleProvideFeedbackClick" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Provide Feedback" />
+                <Button fx:id="reportIssueButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleReportIssueClick" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Report a Safety Issue" />
+                <Button fx:id="wildlifeChecklistButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleWildlifeChecklistClick" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Wildlife Checklist" />
+                <Button fx:id="parkInfoButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleParkInfoClick" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Park Information" />
 
-</AnchorPane>
+                <VBox VBox.vgrow="ALWAYS" />
+
+                <Button fx:id="logoutButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleLogoutClick" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Logout" />
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="contentArea" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="CENTER" spacing="10.0">
+                    <children>
+                        <Label text="Welcome to Lawachara National Park">
+                            <font>
+                                <Font name="System Bold" size="28.0" />
+                            </font>
+                        </Label>
+                        <Label text="Please select an option from the menu to begin." />
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+    </center>
+</BorderPane>
