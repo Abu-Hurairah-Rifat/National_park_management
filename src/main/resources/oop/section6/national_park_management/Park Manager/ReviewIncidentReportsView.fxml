@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="oop.section6.national_park_management.ReviewIncidentReportsController"
+            prefWidth="650" prefHeight="600">
+
+    <top>
+        <Label text="Review Incident Reports"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"
+               BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+        </Label>
+    </top>
+
+    <center>
+        <VBox spacing="20" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <TableView fx:id="incidentTable" prefHeight="400" prefWidth="600">
+                <columns>
+                    <TableColumn fx:id="colIncidentId" text="Report ID" prefWidth="120"/>
+                    <TableColumn fx:id="colType" text="Type" prefWidth="120"/>
+                    <TableColumn fx:id="colLocation" text="Location" prefWidth="120"/>
+                    <TableColumn fx:id="colTime" text="Time" prefWidth="120"/>
+                    <TableColumn fx:id="colStatus" text="Status" prefWidth="120"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Button fx:id="markReviewedBtn" text="Mark as Reviewed" prefWidth="180"/>
+                <Button fx:id="assignTeamBtn" text="Assign to Team" prefWidth="180"/>
+                <Button fx:id="refreshBtn" text="Refresh List" prefWidth="180"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
