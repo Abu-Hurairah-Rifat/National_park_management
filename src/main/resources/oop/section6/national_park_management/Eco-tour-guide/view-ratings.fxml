@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="800.0" spacing="15.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.EcoTourGuide.ViewRatingsController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <Label text="My Ratings and Reviews">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #f0f0f0; -fx-padding: 10;">
+            <children>
+                <Label text="Average Star Rating:">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="averageRatingLabel" text="N/A">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <children>
+                <Label text="Filter by rating:" />
+                <ComboBox fx:id="filterRatingComboBox" prefWidth="150.0" promptText="All Ratings" />
+            </children>
+        </HBox>
+        <ListView fx:id="reviewsListView" VBox.vgrow="ALWAYS" />
+    </children>
+</VBox>
