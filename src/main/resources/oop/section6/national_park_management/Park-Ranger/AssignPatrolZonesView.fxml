@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="oop.section6.national_park_management.Park_Ranger.AssignPatrolZonesController"
+            prefWidth="650" prefHeight="600">
+
+    <top>
+        <Label text="Assign Patrol Zones"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"
+               BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+        </Label>
+    </top>
+
+    <center>
+        <VBox spacing="20" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <HBox spacing="15" alignment="CENTER">
+                <Label text="Select Ranger:"/>
+                <ComboBox fx:id="rangerComboBox" promptText="Choose Ranger" prefWidth="200"/>
+            </HBox>
+
+            <TableView fx:id="zoneTable" prefHeight="350" prefWidth="600">
+                <columns>
+                    <TableColumn fx:id="colZoneId" text="Zone ID" prefWidth="100"/>
+                    <TableColumn fx:id="colZoneName" text="Zone Name" prefWidth="200"/>
+                    <TableColumn fx:id="colBoundaries" text="Boundaries" prefWidth="300"/>
+                </columns>
+            </TableView>
+
+            <Button fx:id="assignBtn" text="Assign Selected Zone" prefWidth="200"/>
+        </VBox>
+    </center>
+</BorderPane>

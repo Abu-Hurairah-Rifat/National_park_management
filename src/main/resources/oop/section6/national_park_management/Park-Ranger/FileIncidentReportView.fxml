@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx/8"
+            fx:controller="oop.section6.national_park_management.Park_Ranger.FileIncidentReportController"
+            prefHeight="600" prefWidth="650">
+
+    <top>
+        <Label text="File Incident Report"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox spacing="15" alignment="CENTER">
+            <padding><Insets top="30" left="40" right="40" bottom="40"/></padding>
+
+            <TextField fx:id="typeField" promptText="Incident Type"/>
+            <TextField fx:id="locationField" promptText="Location"/>
+            <TextArea fx:id="descriptionArea" promptText="Description" prefRowCount="4"/>
+            <Button fx:id="submitReportBtn" text="Submit Report" prefWidth="200"/>
+        </VBox>
+    </center>
+</BorderPane>
