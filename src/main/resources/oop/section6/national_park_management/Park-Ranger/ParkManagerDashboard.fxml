@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane prefHeight="600" prefWidth="650" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.Park_Ranger.ParkManagerController">
+
+    <top>
+        <ToolBar>
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Park Manager Dashboard" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="logoutButton" text="Logout" />
+        </ToolBar>
+    </top>
+
+    <center>
+        <GridPane fx:id="buttonGrid" alignment="CENTER" hgap="20" vgap="20">
+            <padding>
+                <Insets bottom="40" left="40" right="40" top="40" />
+            </padding>
+
+            <Button fx:id="approveScheduleBtn" prefHeight="54.0" prefWidth="250.0" text="Approve Schedules" />
+            <Button fx:id="monitorVisitorsBtn" prefHeight="54.0" prefWidth="250.0" text="Monitor Visitors" GridPane.columnIndex="1" />
+
+            <Button fx:id="reviewIncidentsBtn" prefHeight="54.0" prefWidth="250.0" text="Review Incidents" GridPane.rowIndex="1" />
+            <Button fx:id="assignPatrolZonesBtn" prefHeight="54.0" prefWidth="250.0" text="Assign Patrol Zones" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Button fx:id="manageCensusBtn" prefHeight="54.0" prefWidth="250.0" text="Manage Wildlife Census" GridPane.rowIndex="2" />
+            <Button fx:id="scheduleMaintenanceBtn" prefHeight="54.0" prefWidth="250.0" text="Schedule Maintenance" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Button fx:id="setFeeBtn" prefHeight="54.0" prefWidth="250.0" text="Set Entry Fee Rates" GridPane.rowIndex="3" />
+            <Button fx:id="exportFinanceBtn" prefHeight="54.0" prefWidth="250.0" text="Export Financial Reports" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+    </center>
+</BorderPane>

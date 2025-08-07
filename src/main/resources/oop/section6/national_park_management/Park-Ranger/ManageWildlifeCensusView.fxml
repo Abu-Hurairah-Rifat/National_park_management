@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="oop.section6.national_park_management.Park_Ranger.ManageWildlifeCensusController"
+            prefWidth="650" prefHeight="600">
+
+    <top>
+        <Label text="Manage Wildlife Census"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"
+               BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+        </Label>
+    </top>
+
+    <center>
+        <VBox spacing="20" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <TableView fx:id="censusTable" prefHeight="350" prefWidth="600">
+                <columns>
+                    <TableColumn fx:id="colSpecies" text="Species" prefWidth="200"/>
+                    <TableColumn fx:id="colCount" text="Count" prefWidth="100"/>
+                    <TableColumn fx:id="colLocation" text="Location" prefWidth="200"/>
+                    <TableColumn fx:id="colDate" text="Date" prefWidth="100"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="15" alignment="CENTER">
+                <Button fx:id="addEntryBtn" text="Add New Entry" prefWidth="150"/>
+                <Button fx:id="editEntryBtn" text="Edit Selected" prefWidth="150"/>
+                <Button fx:id="deleteEntryBtn" text="Delete Selected" prefWidth="150"/>
+                <Button fx:id="refreshBtn" text="Refresh Table" prefWidth="150"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
