@@ -8,6 +8,9 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.chart.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
@@ -23,7 +26,9 @@
         <!-- Configuration Section -->
         <TitledPane text="Report Configuration" expanded="true">
             <GridPane hgap="10" vgap="10">
-                <padding><Insets all="10"/></padding>
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
 
                 <!-- Date Range -->
                 <Label text="Date Range:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
@@ -33,37 +38,80 @@
                     <DatePicker fx:id="endDatePicker" promptText="End Date"/>
                 </HBox>
 
+                <!-- Species Filter -->
+                <Label text="Species:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <ComboBox fx:id="speciesComboBox" promptText="Select Species" 
+                         GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="All Species"/>
+                            <String fx:value="Endangered Only"/>
+                            <String fx:value="Threatened Only"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+
                 <!-- Content Selection -->
-                <Label text="Include:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Label text="Include:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
                     <CheckBox fx:id="includeChartCheckbox" text="Species Trend Chart" selected="true"/>
                     <CheckBox fx:id="includePhotosCheckbox" text="Sighting Photos"/>
                     <CheckBox fx:id="includeStatsCheckbox" text="Statistics Summary" selected="true"/>
+                    <CheckBox fx:id="includeMapCheckbox" text="Location Map"/>
+                </VBox>
+
+                <!-- Report Format -->
+                <Label text="Format:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <ComboBox fx:id="formatComboBox" promptText="Select Format">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="PDF"/>
+                                <String fx:value="Excel"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
                 </VBox>
 
                 <!-- Notes -->
-                <Label text="Additional Notes:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <Label text="Additional Notes:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
                 <TextArea fx:id="notesArea" prefRowCount="4" wrapText="true"
                          promptText="Enter any additional notes for the report"
-                         GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                         GridPane.columnIndex="1" GridPane.rowIndex="4"/>
             </GridPane>
         </TitledPane>
 
         <!-- Preview Section -->
         <TitledPane text="Report Preview" VBox.vgrow="ALWAYS">
-            <ScrollPane fitToWidth="true">
-                <VBox fx:id="previewContainer" spacing="10" style="-fx-background-color: white;">
-                    <!-- Preview content will be added here dynamically -->
-                    <padding><Insets all="20"/></padding>
-                </VBox>
-            </ScrollPane>
+            <VBox spacing="10">
+                <!-- Summary Stats -->
+                <GridPane hgap="15" vgap="5" styleClass="preview-stats">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                    <Label text="Total Sightings:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <Label fx:id="totalSightingsLabel" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                    <Label text="Selected Period:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <Label fx:id="periodLabel" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                </GridPane>
+
+                <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+                    <VBox fx:id="previewContainer" spacing="10" style="-fx-background-color: white;">
+                        <!-- Preview content will be added here dynamically -->
+                        <padding>
+                            <Insets top="20" right="20" bottom="20" left="20"/>
+                        </padding>
+                    </VBox>
+                </ScrollPane>
+            </VBox>
         </TitledPane>
 
         <!-- Action Buttons -->
         <HBox spacing="15" alignment="CENTER">
             <Button fx:id="previewButton" text="Update Preview" onAction="#handleUpdatePreview"/>
-            <Button fx:id="generateButton" text="Generate PDF" onAction="#handleGeneratePDF"/>
-            <Button fx:id="openButton" text="Open PDF" onAction="#handleOpenPDF" disable="true"/>
+            <Button fx:id="generateButton" text="Generate Report" onAction="#handleGenerateReport"/>
+            <Button fx:id="openButton" text="Open Report" onAction="#handleOpenReport" disable="true"/>
+            <Button fx:id="saveSettingsButton" text="Save Settings" onAction="#handleSaveSettings"/>
             <Button fx:id="cancelButton" text="Cancel" onAction="#handleCancel"/>
         </HBox>
 

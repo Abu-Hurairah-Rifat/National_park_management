@@ -5,10 +5,142 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="oop.section6.national_park_management.Wildlife-RD.Conservation Data Analyst.AddAnalyticalNotes"
-            prefHeight="400.0" prefWidth="600.0">
+            fx:controller="oop.section6.national_park_management.Wildlife_RD.ConservationDataAnalyst.AnalyticalNotesController"
+            prefHeight="800.0" prefWidth="1200.0"
+            styleClass="main-anchor-pane">
 
+    <VBox spacing="20" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0" 
+          AnchorPane.rightAnchor="20.0" AnchorPane.bottomAnchor="20.0">
+
+        <!-- Header with Back Button -->
+        <HBox spacing="20" alignment="CENTER_LEFT">
+            <Button fx:id="backButton" text="← Back to Dashboard" onAction="#handleBack" styleClass="back-button"/>
+            <Label text="Analytical Notes" styleClass="page-title">
+                <font>
+                    <Font name="System Bold" size="24.0"/>
+                </font>
+            </Label>
+        </HBox>
+
+        <!-- Context Panel -->
+        <TitledPane text="Analysis Context" expanded="true">
+            <GridPane hgap="15" vgap="10">
+                <padding>
+                    <Insets topRightBottomLeft="15"/>
+                </padding>
+
+                <!-- Note Category -->
+                <Label text="Category:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <ComboBox fx:id="categoryCombo" promptText="Select Category" prefWidth="200" 
+                         GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <!-- Related Data -->
+                <Label text="Related To:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <ComboBox fx:id="relatedSpeciesCombo" promptText="Species" prefWidth="150"/>
+                    <ComboBox fx:id="relatedRegionCombo" promptText="Region" prefWidth="150"/>
+                    <DatePicker fx:id="relevantDatePicker" promptText="Relevant Date"/>
+                </HBox>
+
+                <!-- Tags -->
+                <Label text="Tags:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <TextField fx:id="tagField" promptText="Add tags..." HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="addTagButton" text="+" onAction="#handleAddTag"/>
+                </HBox>
+                <FlowPane fx:id="tagContainer" hgap="5" vgap="5" 
+                         GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            </GridPane>
+        </TitledPane>
+
+        <!-- Split View for Notes and Data -->
+        <SplitPane dividerPositions="0.7" VBox.vgrow="ALWAYS">
+            <!-- Note Editor -->
+            <VBox spacing="10">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Analysis Notes" styleClass="section-header"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <ToggleButton fx:id="richTextToggle" text="Rich Text"/>
+                    <Button fx:id="insertChartButton" text="Insert Chart" onAction="#handleInsertChart"/>
+                    <Button fx:id="insertTableButton" text="Insert Table" onAction="#handleInsertTable"/>
+                </HBox>
+                <!-- Rich Text Editor -->
+                <StackPane VBox.vgrow="ALWAYS">
+                    <HTMLEditor fx:id="richTextEditor" visible="false" managed="false"/>
+                    <TextArea fx:id="plainTextEditor" wrapText="true" promptText="Enter your analysis notes here (minimum 30 characters)..."/>
+                </StackPane>
+            </VBox>
+
+            <!-- Reference Panel -->
+            <VBox spacing="10">
+                <TabPane VBox.vgrow="ALWAYS">
+                    <!-- Current Trends Tab -->
+                    <Tab text="Current Trends" closable="false">
+                        <VBox spacing="10">
+                            <Label text="Population Trends" styleClass="subsection-header"/>
+                            <LineChart fx:id="populationTrendChart" prefHeight="200">
+                                <xAxis>
+                                    <CategoryAxis label="Time"/>
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis label="Population"/>
+                                </yAxis>
+                            </LineChart>
+                            <Label text="Key Statistics" styleClass="subsection-header"/>
+                            <ListView fx:id="statisticsList" prefHeight="150"/>
+                        </VBox>
+                    </Tab>
+
+                    <!-- Previous Notes Tab -->
+                    <Tab text="Previous Notes" closable="false">
+                        <VBox spacing="10">
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <TextField fx:id="searchField" promptText="Search notes..." HBox.hgrow="ALWAYS"/>
+                                <ComboBox fx:id="filterCombo" promptText="Filter by"/>
+                            </HBox>
+                            <ListView fx:id="previousNotesList" VBox.vgrow="ALWAYS"/>
+                        </VBox>
+                    </Tab>
+
+                    <!-- References Tab -->
+                    <Tab text="References" closable="false">
+                        <VBox spacing="10">
+                            <TableView fx:id="referencesTable" VBox.vgrow="ALWAYS">
+                                <columns>
+                                    <TableColumn fx:id="refDateColumn" text="Date"/>
+                                    <TableColumn fx:id="refTypeColumn" text="Type"/>
+                                    <TableColumn fx:id="refTitleColumn" text="Title"/>
+                                </columns>
+                            </TableView>
+                            <Button fx:id="addReferenceButton" text="Add Reference" 
+                                    onAction="#handleAddReference"/>
+                        </VBox>
+                    </Tab>
+                </TabPane>
+            </VBox>
+        </SplitPane>
+
+        <!-- Action Buttons -->
+        <HBox spacing="15" alignment="CENTER">
+            <Button fx:id="previewButton" text="Preview" onAction="#handlePreview" styleClass="action-button"/>
+            <Button fx:id="saveButton" text="Save Note" onAction="#handleSave" styleClass="action-button"/>
+            <Button fx:id="exportButton" text="Export as PDF" onAction="#handleExport" styleClass="action-button"/>
+            <Button fx:id="shareButton" text="Share" onAction="#handleShare" styleClass="action-button"/>
+        </HBox>
+
+        <!-- Status Bar -->
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="status-bar">
+            <Label fx:id="statusLabel" styleClass="status-label"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="wordCountLabel" text="Words: 0"/>
+            <Label fx:id="charCountLabel" text="Characters: 0"/>
+            <Label fx:id="lastSavedLabel" text="Last saved: Never"/>
+        </HBox>
+    </VBox>
 </AnchorPane>

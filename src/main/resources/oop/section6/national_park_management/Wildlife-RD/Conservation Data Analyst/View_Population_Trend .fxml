@@ -7,22 +7,33 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="oop.section6.national_park_management.Wildlife-RD.Conservation Data Analyst.ViewPopulationTrend"
-            prefHeight="800.0" prefWidth="1200.0">
+            fx:controller="oop.section6.national_park_management.Wildlife_RD.ConservationDataAnalyst.PopulationTrendController"
+            prefHeight="800.0" prefWidth="1200.0"
+            styleClass="main-anchor-pane">
 
     <VBox spacing="20" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0" 
           AnchorPane.rightAnchor="20.0" AnchorPane.bottomAnchor="20.0">
 
-        <!-- Header -->
-        <Label text="Population Trend Analysis" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        <!-- Header with Back Button -->
+        <HBox spacing="20" alignment="CENTER_LEFT">
+            <Button fx:id="backButton" text="← Back to Dashboard" onAction="#handleBack" styleClass="back-button"/>
+            <Label text="Population Trend Analysis" styleClass="page-title">
+                <font>
+                    <Font name="System Bold" size="24.0"/>
+                </font>
+            </Label>
+        </HBox>
         
         <!-- Analysis Controls -->
-        <TitledPane text="Analysis Parameters">
+        <TitledPane text="Analysis Parameters" expanded="true">
             <GridPane hgap="15" vgap="10">
-                <padding><Insets all="15"/></padding>
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
                 
                 <!-- Species Selection -->
                 <Label text="Species:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
@@ -40,14 +51,13 @@
                 <!-- Data Grouping -->
                 <Label text="Group By:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
                 <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                    <ToggleGroup fx:id="groupByToggle">
-                        <RadioButton fx:id="monthlyRadio" text="Monthly" selected="true" 
-                                   toggleGroup="$groupByToggle"/>
-                        <RadioButton fx:id="quarterlyRadio" text="Quarterly" 
-                                   toggleGroup="$groupByToggle"/>
-                        <RadioButton fx:id="yearlyRadio" text="Yearly" 
-                                   toggleGroup="$groupByToggle"/>
-                    </ToggleGroup>
+                    <RadioButton fx:id="monthlyRadio" text="Monthly" selected="true">
+                        <toggleGroup>
+                            <ToggleGroup fx:id="groupByToggle"/>
+                        </toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="quarterlyRadio" text="Quarterly" toggleGroup="$groupByToggle"/>
+                    <RadioButton fx:id="yearlyRadio" text="Yearly" toggleGroup="$groupByToggle"/>
                 </HBox>
                 
                 <!-- Analysis Options -->
@@ -56,29 +66,64 @@
                     <CheckBox fx:id="showTrendlineCheckbox" text="Show Trendline" selected="true"/>
                     <CheckBox fx:id="showConfidenceCheckbox" text="Show Confidence Intervals"/>
                     <CheckBox fx:id="showSeasonalCheckbox" text="Show Seasonal Patterns"/>
+                    <CheckBox fx:id="showDataPointsCheckbox" text="Show Data Points"/>
+                    <CheckBox fx:id="showAnomaliesCheckbox" text="Highlight Anomalies"/>
+                </VBox>
+
+                <!-- Region Filter -->
+                <Label text="Region:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <ComboBox fx:id="regionComboBox" promptText="All Regions" 
+                         GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                
+                <!-- Chart Settings -->
+                <Label text="Chart Settings:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <ComboBox fx:id="chartTypeCombo" promptText="Chart Type"/>
+                    <TextField fx:id="yAxisMinField" promptText="Y-Axis Minimum"/>
+                    <TextField fx:id="yAxisMaxField" promptText="Y-Axis Maximum"/>
                 </VBox>
             </GridPane>
         </TitledPane>
 
         <!-- Chart Area -->
-        <TitledPane text="Population Trend" VBox.vgrow="ALWAYS">
-            <StackPane>
-                <LineChart fx:id="populationChart">
-                    <xAxis>
-                        <CategoryAxis label="Time Period"/>
-                    </xAxis>
-                    <yAxis>
-                        <NumberAxis label="Population Count"/>
-                    </yAxis>
-                </LineChart>
-                <ProgressIndicator fx:id="loadingIndicator" visible="false"/>
-            </StackPane>
-        </TitledPane>
+        <SplitPane dividerPositions="0.7" VBox.vgrow="ALWAYS">
+            <VBox spacing="10">
+                <TitledPane text="Population Trend" VBox.vgrow="ALWAYS">
+                    <StackPane>
+                        <LineChart fx:id="populationChart" animated="false" createSymbols="true">
+                            <xAxis>
+                                <CategoryAxis label="Time Period" tickLabelRotation="45"/>
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis label="Population Count" autoRanging="true"/>
+                            </yAxis>
+                        </LineChart>
+                        <ProgressIndicator fx:id="loadingIndicator" visible="false"/>
+                    </StackPane>
+                </TitledPane>
+            </VBox>
+            
+            <!-- Data Table -->
+            <VBox spacing="10">
+                <TitledPane text="Data Points" VBox.vgrow="ALWAYS">
+                    <TableView fx:id="dataTable">
+                        <columns>
+                            <TableColumn fx:id="dateColumn" text="Date"/>
+                            <TableColumn fx:id="populationColumn" text="Population"/>
+                            <TableColumn fx:id="changeColumn" text="Change"/>
+                            <TableColumn fx:id="notesColumn" text="Notes"/>
+                        </columns>
+                    </TableView>
+                </TitledPane>
+            </VBox>
+        </SplitPane>
 
         <!-- Statistics Panel -->
         <TitledPane text="Statistical Analysis">
             <GridPane hgap="15" vgap="5">
-                <padding><Insets all="10"/></padding>
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
                 
                 <Label text="Population Change:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
                 <Label fx:id="populationChangeLabel" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
@@ -96,15 +141,20 @@
 
         <!-- Action Buttons -->
         <HBox spacing="15" alignment="CENTER">
-            <Button fx:id="updateButton" text="Update Analysis" onAction="#handleUpdate"/>
-            <Button fx:id="exportDataButton" text="Export Data" onAction="#handleExportData"/>
-            <Button fx:id="exportChartButton" text="Export Chart" onAction="#handleExportChart"/>
-            <Button fx:id="addNotesButton" text="Add Analysis Notes" onAction="#handleAddNotes"/>
-            <Button fx:id="returnButton" text="Return to Dashboard" onAction="#handleReturn"/>
+            <Button fx:id="updateButton" text="Update Analysis" onAction="#handleUpdate" styleClass="action-button"/>
+            <Button fx:id="exportDataButton" text="Export Data" onAction="#handleExportData" styleClass="action-button"/>
+            <Button fx:id="exportChartButton" text="Export Chart" onAction="#handleExportChart" styleClass="action-button"/>
+            <Button fx:id="addNotesButton" text="Add Analysis Notes" onAction="#handleAddNotes" styleClass="action-button"/>
+            <Button fx:id="compareButton" text="Compare Species" onAction="#handleCompare" styleClass="action-button"/>
         </HBox>
 
-        <!-- Status -->
-        <Label fx:id="statusLabel" styleClass="status-label"/>
+        <!-- Status Bar -->
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="status-bar">
+            <Label fx:id="statusLabel" styleClass="status-label"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="lastUpdatedLabel" text="Last Updated: Never"/>
+            <ProgressBar fx:id="loadingProgress" visible="false" prefWidth="200"/>
+        </HBox>
     </VBox>
 
 </AnchorPane>

@@ -5,10 +5,153 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="oop.section6.national_park_management.Wildlife-RD.Conservation Data Analyst.CompareTwoRegions"
-            prefHeight="400.0" prefWidth="600.0">
+            fx:controller="oop.section6.national_park_management.Wildlife_RD.ConservationDataAnalyst.RegionComparisonController"
+            prefHeight="800.0" prefWidth="1200.0"
+            styleClass="main-anchor-pane">
 
+    <VBox spacing="20" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0" 
+          AnchorPane.rightAnchor="20.0" AnchorPane.bottomAnchor="20.0">
+
+        <!-- Header with Back Button -->
+        <HBox spacing="20" alignment="CENTER_LEFT">
+            <Button fx:id="backButton" text="← Back to Dashboard" onAction="#handleBack" styleClass="back-button"/>
+            <Label text="Compare Regions" styleClass="page-title">
+                <font>
+                    <Font name="System Bold" size="24.0"/>
+                </font>
+            </Label>
+        </HBox>
+
+        <!-- Region Selection and Filters -->
+        <TitledPane text="Comparison Settings" expanded="true">
+            <GridPane hgap="15" vgap="10">
+                <padding>
+                    <Insets topRightBottomLeft="15"/>
+                </padding>
+
+                <!-- Region Selection -->
+                <Label text="Select Regions:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <HBox spacing="20" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <VBox spacing="5">
+                        <Label text="Region 1:"/>
+                        <ComboBox fx:id="region1Combo" promptText="Select First Region" prefWidth="200"/>
+                    </VBox>
+                    <VBox spacing="5">
+                        <Label text="Region 2:"/>
+                        <ComboBox fx:id="region2Combo" promptText="Select Second Region" prefWidth="200"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Time Period -->
+                <Label text="Time Period:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <DatePicker fx:id="startDatePicker" promptText="Start Date"/>
+                    <Label text="to"/>
+                    <DatePicker fx:id="endDatePicker" promptText="End Date"/>
+                    <ComboBox fx:id="presetPeriodCombo" promptText="Preset Periods"/>
+                </HBox>
+
+                <!-- Comparison Metrics -->
+                <Label text="Compare By:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <CheckBox fx:id="compareSpeciesCount" text="Species Count" selected="true"/>
+                    <CheckBox fx:id="comparePopulation" text="Total Population" selected="true"/>
+                    <CheckBox fx:id="compareThreatLevels" text="Threat Level Distribution" selected="true"/>
+                    <CheckBox fx:id="compareGrowthRate" text="Population Growth Rate"/>
+                    <CheckBox fx:id="compareSightings" text="Sighting Frequency"/>
+                </VBox>
+
+                <!-- Species Filter -->
+                <Label text="Filter Species:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <ComboBox fx:id="speciesFilter" promptText="All Species" prefWidth="200"/>
+                    <CheckBox fx:id="endangeredOnly" text="Show only endangered species"/>
+                </VBox>
+            </GridPane>
+        </TitledPane>
+
+        <!-- Comparison Results -->
+        <TabPane VBox.vgrow="ALWAYS">
+            <!-- Bar Chart View -->
+            <Tab text="Bar Chart Comparison">
+                <VBox spacing="10">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Metric:" styleClass="section-header"/>
+                        <ComboBox fx:id="barChartMetric" promptText="Select Metric"/>
+                    </HBox>
+                    <BarChart fx:id="comparisonBarChart" legendVisible="true">
+                        <xAxis>
+                            <CategoryAxis label="Species"/>
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis label="Count"/>
+                        </yAxis>
+                    </BarChart>
+                </VBox>
+            </Tab>
+
+            <!-- Detailed Data View -->
+            <Tab text="Detailed Comparison">
+                <TableView fx:id="comparisonTable">
+                    <columns>
+                        <TableColumn fx:id="metricColumn" text="Metric"/>
+                        <TableColumn fx:id="region1Column" text="Region 1"/>
+                        <TableColumn fx:id="region2Column" text="Region 2"/>
+                        <TableColumn fx:id="differenceColumn" text="Difference"/>
+                        <TableColumn fx:id="percentageColumn" text="% Difference"/>
+                    </columns>
+                </TableView>
+            </Tab>
+
+            <!-- Statistical Analysis -->
+            <Tab text="Statistical Analysis">
+                <VBox spacing="10">
+                    <GridPane hgap="15" vgap="10">
+                        <padding>
+                            <Insets topRightBottomLeft="15"/>
+                        </padding>
+                        <!-- Statistical Metrics -->
+                        <TitledPane text="Population Statistics" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <VBox spacing="5">
+                                <Label fx:id="meanLabel" text="Mean Population:"/>
+                                <Label fx:id="medianLabel" text="Median Population:"/>
+                                <Label fx:id="stdDevLabel" text="Standard Deviation:"/>
+                                <Label fx:id="correlationLabel" text="Population Correlation:"/>
+                            </VBox>
+                        </TitledPane>
+                        
+                        <TitledPane text="Species Diversity" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                            <VBox spacing="5">
+                                <Label fx:id="uniqueSpeciesLabel" text="Unique Species:"/>
+                                <Label fx:id="commonSpeciesLabel" text="Common Species:"/>
+                                <Label fx:id="endangeredCountLabel" text="Endangered Species:"/>
+                            </VBox>
+                        </TitledPane>
+                    </GridPane>
+                </VBox>
+            </Tab>
+        </TabPane>
+
+        <!-- Action Buttons -->
+        <HBox spacing="15" alignment="CENTER">
+            <Button fx:id="updateButton" text="Update Comparison" onAction="#handleUpdate" styleClass="action-button"/>
+            <Button fx:id="exportDataButton" text="Export Data" onAction="#handleExportData" styleClass="action-button"/>
+            <Button fx:id="exportChartButton" text="Export Charts" onAction="#handleExportCharts" styleClass="action-button"/>
+            <Button fx:id="generateReportButton" text="Generate PDF Report" onAction="#handleGenerateReport" styleClass="action-button"/>
+        </HBox>
+
+        <!-- Status Bar -->
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="status-bar">
+            <Label fx:id="statusLabel" styleClass="status-label"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="lastUpdatedLabel" text="Last Updated: Never"/>
+            <ProgressBar fx:id="progressBar" visible="false" prefWidth="200"/>
+        </HBox>
+    </VBox>
 </AnchorPane>

@@ -7,6 +7,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.text.Text?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
@@ -82,13 +84,41 @@
             <TextArea fx:id="notesArea" prefRowCount="3" 
                      promptText="Enter any additional notes"
                      wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                     
+            <!-- Conservation Status -->
+            <Label text="Conservation Status:" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+            <TextArea fx:id="conservationStatusArea" prefRowCount="2"
+                     promptText="Enter current conservation efforts and status"
+                     wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                     
+            <!-- Population Estimate -->
+            <Label text="Population Estimate:" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+            <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                <TextField fx:id="populationMinField" promptText="Minimum"/>
+                <Label text="to"/>
+                <TextField fx:id="populationMaxField" promptText="Maximum"/>
+                <ComboBox fx:id="confidenceLevelComboBox" promptText="Confidence Level">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="High"/>
+                            <String fx:value="Medium"/>
+                            <String fx:value="Low"/>
+                            <String fx:value="Unknown"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+            </HBox>
         </GridPane>
         
         <!-- Validation Messages -->
-        <VBox fx:id="validationMessages" spacing="5" styleClass="validation-box"/>
+        <VBox fx:id="validationMessages" spacing="5" styleClass="validation-box">
+            <padding><Insets top="10" bottom="10"/></padding>
+        </VBox>
         
         <!-- Action Buttons -->
         <HBox spacing="20" alignment="CENTER">
+            <Button fx:id="validateButton" text="Validate" onAction="#handleValidate"
+                    styleClass="secondary-button"/>
             <Button fx:id="saveButton" text="Save Species" onAction="#handleSaveSpecies"
                     styleClass="primary-button"/>
             <Button fx:id="clearButton" text="Clear Form" onAction="#handleClearForm"

@@ -5,10 +5,155 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="oop.section6.national_park_management.Wildlife-RD.Conservation Data Analyst.ExportSummaryReport"
-            prefHeight="400.0" prefWidth="600.0">
+            fx:controller="oop.section6.national_park_management.Wildlife_RD.ConservationDataAnalyst.ExportSummaryReportController"
+            prefHeight="800.0" prefWidth="1200.0"
+            styleClass="main-anchor-pane">
 
+    <VBox spacing="20" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0" 
+          AnchorPane.rightAnchor="20.0" AnchorPane.bottomAnchor="20.0">
+
+        <!-- Header with Back Button -->
+        <HBox spacing="20" alignment="CENTER_LEFT">
+            <Button fx:id="backButton" text="← Back to Dashboard" onAction="#handleBack" styleClass="back-button"/>
+            <Label text="Export Summary Report" styleClass="page-title">
+                <font>
+                    <Font name="System Bold" size="24.0"/>
+                </font>
+            </Label>
+        </HBox>
+
+        <!-- Report Configuration -->
+        <TitledPane text="Report Configuration" expanded="true">
+            <GridPane hgap="15" vgap="10">
+                <padding>
+                    <Insets topRightBottomLeft="15"/>
+                </padding>
+
+                <!-- Report Header -->
+                <Label text="Report Title:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="reportTitleField" promptText="Enter report title" 
+                         GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <!-- Time Period -->
+                <Label text="Time Period:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <DatePicker fx:id="startDatePicker" promptText="Start Date"/>
+                    <Label text="to"/>
+                    <DatePicker fx:id="endDatePicker" promptText="End Date"/>
+                    <ComboBox fx:id="presetPeriodCombo" promptText="Preset Periods"/>
+                </HBox>
+
+                <!-- Report Sections -->
+                <Label text="Include Sections:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <CheckBox fx:id="includeOverviewCheckbox" text="Executive Overview" selected="true"/>
+                    <CheckBox fx:id="includeTopSpeciesCheckbox" text="Top 5 Species Analysis" selected="true"/>
+                    <CheckBox fx:id="includeRegionalCheckbox" text="Regional Distribution" selected="true"/>
+                    <CheckBox fx:id="includeThreatCheckbox" text="Threat Level Assessment" selected="true"/>
+                    <CheckBox fx:id="includeTrendsCheckbox" text="Population Trends" selected="true"/>
+                    <CheckBox fx:id="includeNotesCheckbox" text="Analytical Notes" selected="true"/>
+                </VBox>
+
+                <!-- Report Format -->
+                <Label text="Report Format:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <ComboBox fx:id="reportFormatCombo" promptText="Select Format"/>
+                    <CheckBox fx:id="includeLogoCheckbox" text="Include Park Logo" selected="true"/>
+                    <CheckBox fx:id="includeWatermarkCheckbox" text="Add Watermark"/>
+                    <CheckBox fx:id="includePageNumbersCheckbox" text="Include Page Numbers" selected="true"/>
+                </VBox>
+
+                <!-- Logo Upload -->
+                <Label text="Logo:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <ImageView fx:id="logoPreview" fitHeight="50" fitWidth="50"/>
+                    <Button fx:id="uploadLogoButton" text="Upload Logo" onAction="#handleUploadLogo"/>
+                </HBox>
+            </GridPane>
+        </TitledPane>
+
+        <!-- Report Preview -->
+        <SplitPane dividerPositions="0.7" VBox.vgrow="ALWAYS">
+            <!-- Preview Area -->
+            <VBox spacing="10">
+                <Label text="Report Preview" styleClass="section-header"/>
+                <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+                    <VBox fx:id="previewContainer" spacing="20">
+                        <!-- Executive Overview -->
+                        <TitledPane text="Executive Overview">
+                            <VBox spacing="10">
+                                <TextArea fx:id="overviewText" wrapText="true" prefRowCount="4"/>
+                            </VBox>
+                        </TitledPane>
+
+                        <!-- Top Species -->
+                        <TitledPane text="Top 5 Species Analysis">
+                            <TableView fx:id="topSpeciesTable">
+                                <columns>
+                                    <TableColumn fx:id="speciesNameColumn" text="Species"/>
+                                    <TableColumn fx:id="populationColumn" text="Population"/>
+                                    <TableColumn fx:id="changeColumn" text="Change"/>
+                                    <TableColumn fx:id="statusColumn" text="Status"/>
+                                </columns>
+                            </TableView>
+                        </TitledPane>
+
+                        <!-- Charts -->
+                        <TitledPane text="Visual Analysis">
+                            <TabPane>
+                                <Tab text="Regional Distribution" closable="false">
+                                    <PieChart fx:id="regionalChart"/>
+                                </Tab>
+                                <Tab text="Threat Levels" closable="false">
+                                    <BarChart fx:id="threatChart">
+                                        <xAxis>
+                                            <CategoryAxis label="Threat Level"/>
+                                        </xAxis>
+                                        <yAxis>
+                                            <NumberAxis label="Species Count"/>
+                                        </yAxis>
+                                    </BarChart>
+                                </Tab>
+                            </TabPane>
+                        </TitledPane>
+                    </VBox>
+                </ScrollPane>
+            </VBox>
+
+            <!-- Table of Contents -->
+            <VBox spacing="10">
+                <Label text="Table of Contents" styleClass="section-header"/>
+                <ListView fx:id="tocListView" VBox.vgrow="ALWAYS"/>
+                <VBox spacing="5">
+                    <Label text="Page Layout" styleClass="subsection-header"/>
+                    <ComboBox fx:id="paperSizeCombo" promptText="Paper Size"/>
+                    <ComboBox fx:id="orientationCombo" promptText="Orientation"/>
+                    <TextField fx:id="marginField" promptText="Margins (mm)"/>
+                </VBox>
+            </VBox>
+        </SplitPane>
+
+        <!-- Action Buttons -->
+        <HBox spacing="15" alignment="CENTER">
+            <Button fx:id="previewButton" text="Refresh Preview" onAction="#handlePreview" styleClass="action-button"/>
+            <Button fx:id="exportButton" text="Export PDF" onAction="#handleExport" styleClass="action-button"/>
+            <Button fx:id="saveTemplateButton" text="Save as Template" onAction="#handleSaveTemplate" styleClass="action-button"/>
+            <Button fx:id="emailButton" text="Send via Email" onAction="#handleEmail" styleClass="action-button"/>
+        </HBox>
+
+        <!-- Status Bar -->
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="status-bar">
+            <Label fx:id="statusLabel" styleClass="status-label"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="pageCountLabel" text="Pages: 0"/>
+            <ProgressBar fx:id="exportProgress" visible="false" prefWidth="200"/>
+        </HBox>
+    </VBox>
 </AnchorPane>
