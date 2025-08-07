@@ -22,7 +22,9 @@
         <!-- Search Panel -->
         <TitledPane text="Search Criteria" expanded="true">
             <GridPane hgap="15" vgap="10">
-                <padding><Insets all="15"/></padding>
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
                 
                 <!-- Region Selection -->
                 <Label text="Region:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
@@ -100,18 +102,5 @@
         <!-- Status Message -->
         <Label fx:id="statusLabel" styleClass="status-label"/>
     </VBox>
-
-</AnchorPane>"1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="oop.section6.national_park_management.Wildlife-RD.Wildlife Researcher.SearchSightingsRegion"
-            prefHeight="400.0" prefWidth="600.0">
 
 </AnchorPane>

@@ -6,6 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
@@ -57,18 +58,5 @@
     <!-- Status Message -->
     <Label fx:id="statusLabel" styleClass="status-label"
            AnchorPane.leftAnchor="10.0" AnchorPane.bottomAnchor="10.0"/>
-
-</AnchorPane>"1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="oop.section6.national_park_management.Wildlife-RD.Wildlife Researcher.ViewAllWildLifeSightings"
-            prefHeight="400.0" prefWidth="600.0">
 
 </AnchorPane>
