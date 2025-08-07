@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="626.0" prefWidth="600.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.Permit_Officer.PermitOfficerRespondToPermitInquiriesController">
+   <children>
+      <Label layoutX="190.0" layoutY="25.0" text="Permit Inquiries" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="31.0" />
+         </font>
+      </Label>
+      <Separator layoutY="76.0" prefHeight="3.0" prefWidth="600.0" />
+      <Button layoutX="252.0" layoutY="96.0" mnemonicParsing="false" onAction="#viewInquiriesButton" style="-fx-background-color: teal;" text="View Inquiries" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TableView fx:id="permitInquiriesTableView" layoutX="56.0" layoutY="145.0" prefHeight="200.0" prefWidth="487.0">
+        <columns>
+          <TableColumn fx:id="inquiryIdTableColumn" prefWidth="75.0" text="Inquiry ID" />
+          <TableColumn fx:id="inquiryNameTableColumn" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="inquiryDetailsTableColumn" prefWidth="208.79998779296875" text="Details" />
+            <TableColumn fx:id="inquiryEmailTableColumn" prefWidth="52.00006103515625" text="Email" />
+            <TableColumn fx:id="inquirySubmissionDateTableColumn" prefWidth="75.99993896484375" text="Submission Date" />
+        </columns>
+      </TableView>
+      <Label layoutX="56.0" layoutY="384.0" text="Response Message" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="responseMessageTextArea" layoutX="190.0" layoutY="378.0" prefHeight="84.0" prefWidth="354.0" />
+      <Label layoutX="56.0" layoutY="482.0" text="Email" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="responseEmailTextField" layoutX="190.0" layoutY="478.0" prefHeight="26.0" prefWidth="354.0" />
+      <Button layoutX="443.0" layoutY="522.0" mnemonicParsing="false" onAction="#sendResponseButton" style="-fx-background-color: teal;" text="Send Response" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="backToDashboardButton" layoutX="238.0" layoutY="586.0" mnemonicParsing="false" style="-fx-background-color: teal;" text="Back to Dashboard" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Separator layoutX="1.0" layoutY="566.0" prefHeight="3.0" prefWidth="600.0" />
+      <Separator layoutX="1.0" layoutY="359.0" prefHeight="3.0" prefWidth="600.0" />
+   </children>
+</AnchorPane>

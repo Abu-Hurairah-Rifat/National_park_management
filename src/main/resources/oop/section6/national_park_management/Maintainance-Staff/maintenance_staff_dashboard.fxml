@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="448.0" prefWidth="600.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.Permit_Officer.PermitOfficerDashboard">
+<AnchorPane prefHeight="448.0" prefWidth="600.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.Permit_Officer.PermitOfficerDashboardController">
    <children>
       <Label alignment="CENTER" layoutX="132.0" layoutY="36.0" text="Maintenance Staff Dashboard" textFill="WHITE">
          <font>
