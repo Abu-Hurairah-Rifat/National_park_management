@@ -10,35 +10,58 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="604.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.IssueNewPermit">
+<AnchorPane prefHeight="666.0" prefWidth="600.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.Permit_Officer.PermitOfficerModifyPermitsController">
    <children>
-      <Label layoutX="136.0" layoutY="120.0" text="Visitor Name" />
-      <Label layoutX="137.0" layoutY="155.0" text="Email" />
-      <Label layoutX="136.0" layoutY="193.0" text="Phone" />
-      <Label layoutX="138.0" layoutY="231.0" text="Permit Type" />
-      <Label layoutX="136.0" layoutY="270.0" text="Number of Visitors" />
-      <Label layoutX="136.0" layoutY="308.0" text="Visit Date" />
-      <TextField layoutX="288.0" layoutY="116.0" />
-      <TextField layoutX="289.0" layoutY="154.0" />
-      <TextField layoutX="288.0" layoutY="192.0" />
-      <ComboBox layoutX="289.0" layoutY="227.0" prefWidth="150.0" />
-      <TextField layoutX="288.0" layoutY="265.0" />
-      <DatePicker layoutX="288.0" layoutY="304.0" />
-      <TableView layoutX="36.0" layoutY="390.0" prefHeight="200.0" prefWidth="536.0">
-        <columns>
-          <TableColumn prefWidth="102.4000244140625" text="Visitor Name" />
-          <TableColumn prefWidth="72.79998779296875" text="Email" />
-            <TableColumn prefWidth="83.20001220703125" text="Phone" />
-            <TableColumn prefWidth="87.20001220703125" text="Permit Type" />
-            <TableColumn prefWidth="76.0" text="Number of Visitors" />
-            <TableColumn prefWidth="118.40008544921875" text="Visit Date" />
-        </columns>
-      </TableView>
-      <Label layoutX="212.0" layoutY="38.0" text="Issue New Permit">
+      <Label layoutX="136.0" layoutY="120.0" text="Visitor Name" textFill="WHITE">
          <font>
-            <Font size="24.0" />
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="135.0" layoutY="158.0" text="Email" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="136.0" layoutY="193.0" text="Phone" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="135.0" layoutY="231.0" text="Permit Type" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="136.0" layoutY="270.0" text="Number of Visitors" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="136.0" layoutY="308.0" text="Visit Date" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <TextField fx:id="visitorNameTextField" layoutX="288.0" layoutY="116.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="emailTextField" layoutX="289.0" layoutY="154.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="phoneTextField" layoutX="288.0" layoutY="192.0" prefHeight="26.0" prefWidth="175.0" />
+      <ComboBox fx:id="permitTypeComboBox" layoutX="289.0" layoutY="227.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="noOfVisitorsTextField" layoutX="288.0" layoutY="265.0" prefHeight="26.0" prefWidth="175.0" />
+      <DatePicker fx:id="visitDateDatePicker" layoutX="288.0" layoutY="304.0" />
+      <Label layoutX="183.0" layoutY="38.0" text="Issue New Permit" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="31.0" />
          </font>
       </Label>
-      <Button layoutX="382.0" layoutY="348.0" mnemonicParsing="false" text="Issue Permit" />
+      <Button layoutX="378.0" layoutY="350.0" mnemonicParsing="false" onAction="#issuePermitButton" style="-fx-background-color: teal;" text="Issue Permit" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <TableView fx:id="permitDataTableView" layoutX="32.0" layoutY="404.0" prefHeight="200.0" prefWidth="536.0">
+         <columns>
+            <TableColumn fx:id="permitIdTableColumn" prefWidth="86.4000244140625" text="Permit ID" />
+            <TableColumn fx:id="visitorNameTableColumn" prefWidth="80.800048828125" text="Visitor Name" />
+            <TableColumn fx:id="emailTableColumn" minWidth="0.0" prefWidth="79.20001220703125" text="Email" />
+            <TableColumn fx:id="phoneTableColumn" prefWidth="79.20001220703125" text="Phone" />
+            <TableColumn fx:id="permitTypeTableColumn" prefWidth="52.79998779296875" text="Permit Type" />
+            <TableColumn fx:id="noOfVisitorsTableColumn" prefWidth="48.7999267578125" text="Number of Visitors" />
+            <TableColumn fx:id="visitDateTableColumn" prefWidth="50.4000244140625" text="Visit Date" />
+            <TableColumn fx:id="totalFeeTableColumn" prefWidth="53.5999755859375" text="Total Fee" />
+         </columns>
+      </TableView>
    </children>
 </AnchorPane>
