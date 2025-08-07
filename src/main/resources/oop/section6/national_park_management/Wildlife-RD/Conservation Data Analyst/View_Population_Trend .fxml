@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="oop.section6.national_park_management.Wildlife-RD.Conservation Data Analyst.ViewPopulationTrend"
+            prefHeight="800.0" prefWidth="1200.0">
+
+    <VBox spacing="20" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0" 
+          AnchorPane.rightAnchor="20.0" AnchorPane.bottomAnchor="20.0">
+
+        <!-- Header -->
+        <Label text="Population Trend Analysis" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        
+        <!-- Analysis Controls -->
+        <TitledPane text="Analysis Parameters">
+            <GridPane hgap="15" vgap="10">
+                <padding><Insets all="15"/></padding>
+                
+                <!-- Species Selection -->
+                <Label text="Species:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <ComboBox fx:id="speciesComboBox" promptText="Select Species"
+                         GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                
+                <!-- Time Range -->
+                <Label text="Time Range:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <DatePicker fx:id="startDatePicker" promptText="Start Date"/>
+                    <Label text="to"/>
+                    <DatePicker fx:id="endDatePicker" promptText="End Date"/>
+                </HBox>
+                
+                <!-- Data Grouping -->
+                <Label text="Group By:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <ToggleGroup fx:id="groupByToggle">
+                        <RadioButton fx:id="monthlyRadio" text="Monthly" selected="true" 
+                                   toggleGroup="$groupByToggle"/>
+                        <RadioButton fx:id="quarterlyRadio" text="Quarterly" 
+                                   toggleGroup="$groupByToggle"/>
+                        <RadioButton fx:id="yearlyRadio" text="Yearly" 
+                                   toggleGroup="$groupByToggle"/>
+                    </ToggleGroup>
+                </HBox>
+                
+                <!-- Analysis Options -->
+                <Label text="Show:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <CheckBox fx:id="showTrendlineCheckbox" text="Show Trendline" selected="true"/>
+                    <CheckBox fx:id="showConfidenceCheckbox" text="Show Confidence Intervals"/>
+                    <CheckBox fx:id="showSeasonalCheckbox" text="Show Seasonal Patterns"/>
+                </VBox>
+            </GridPane>
+        </TitledPane>
+
+        <!-- Chart Area -->
+        <TitledPane text="Population Trend" VBox.vgrow="ALWAYS">
+            <StackPane>
+                <LineChart fx:id="populationChart">
+                    <xAxis>
+                        <CategoryAxis label="Time Period"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Population Count"/>
+                    </yAxis>
+                </LineChart>
+                <ProgressIndicator fx:id="loadingIndicator" visible="false"/>
+            </StackPane>
+        </TitledPane>
+
+        <!-- Statistics Panel -->
+        <TitledPane text="Statistical Analysis">
+            <GridPane hgap="15" vgap="5">
+                <padding><Insets all="10"/></padding>
+                
+                <Label text="Population Change:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <Label fx:id="populationChangeLabel" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                
+                <Label text="Growth Rate:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Label fx:id="growthRateLabel" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                
+                <Label text="Trend Direction:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <Label fx:id="trendDirectionLabel" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                
+                <Label text="Statistical Significance:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <Label fx:id="significanceLabel" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            </GridPane>
+        </TitledPane>
+
+        <!-- Action Buttons -->
+        <HBox spacing="15" alignment="CENTER">
+            <Button fx:id="updateButton" text="Update Analysis" onAction="#handleUpdate"/>
+            <Button fx:id="exportDataButton" text="Export Data" onAction="#handleExportData"/>
+            <Button fx:id="exportChartButton" text="Export Chart" onAction="#handleExportChart"/>
+            <Button fx:id="addNotesButton" text="Add Analysis Notes" onAction="#handleAddNotes"/>
+            <Button fx:id="returnButton" text="Return to Dashboard" onAction="#handleReturn"/>
+        </HBox>
+
+        <!-- Status -->
+        <Label fx:id="statusLabel" styleClass="status-label"/>
+    </VBox>
+
+</AnchorPane>

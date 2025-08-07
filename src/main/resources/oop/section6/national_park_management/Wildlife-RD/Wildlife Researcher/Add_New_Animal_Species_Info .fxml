@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="oop.section6.national_park_management.Wildlife-RD.Wildlife Researcher.AddNewAnimalSpeciesInfo"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <VBox spacing="20" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0" 
+          AnchorPane.rightAnchor="20.0" AnchorPane.bottomAnchor="20.0">
+        
+        <!-- Header -->
+        <Label text="Add New Animal Species" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        
+        <!-- Main Form -->
+        <GridPane hgap="15" vgap="15">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            
+            <!-- Species Name -->
+            <Label text="Species Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="speciesNameField" promptText="Enter scientific name"
+                      GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            
+            <!-- Common Name -->
+            <Label text="Common Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="commonNameField" promptText="Enter common name"
+                      GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            
+            <!-- Species Type -->
+            <Label text="Species Type:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <ComboBox fx:id="speciesTypeComboBox" promptText="Select species type"
+                      GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Bird"/>
+                        <String fx:value="Mammal"/>
+                        <String fx:value="Reptile"/>
+                        <String fx:value="Amphibian"/>
+                        <String fx:value="Fish"/>
+                        <String fx:value="Invertebrate"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            
+            <!-- Threat Level -->
+            <Label text="Threat Level:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <ComboBox fx:id="threatLevelComboBox" promptText="Select threat level"
+                      GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Least Concern"/>
+                        <String fx:value="Near Threatened"/>
+                        <String fx:value="Vulnerable"/>
+                        <String fx:value="Endangered"/>
+                        <String fx:value="Critically Endangered"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            
+            <!-- Habitat -->
+            <Label text="Primary Habitat:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+            <TextField fx:id="habitatField" promptText="Enter primary habitat"
+                      GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+            
+            <!-- Description -->
+            <Label text="Description:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+            <TextArea fx:id="descriptionArea" prefRowCount="4" 
+                     promptText="Enter species description and key characteristics"
+                     wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+            
+            <!-- Notes -->
+            <Label text="Additional Notes:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+            <TextArea fx:id="notesArea" prefRowCount="3" 
+                     promptText="Enter any additional notes"
+                     wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+        </GridPane>
+        
+        <!-- Validation Messages -->
+        <VBox fx:id="validationMessages" spacing="5" styleClass="validation-box"/>
+        
+        <!-- Action Buttons -->
+        <HBox spacing="20" alignment="CENTER">
+            <Button fx:id="saveButton" text="Save Species" onAction="#handleSaveSpecies"
+                    styleClass="primary-button"/>
+            <Button fx:id="clearButton" text="Clear Form" onAction="#handleClearForm"
+                    styleClass="secondary-button"/>
+            <Button fx:id="cancelButton" text="Cancel" onAction="#handleCancel"
+                    styleClass="cancel-button"/>
+        </HBox>
+        
+        <!-- Status Message -->
+        <Label fx:id="statusLabel" styleClass="status-label" wrapText="true"/>
+    </VBox>
+
+</AnchorPane>

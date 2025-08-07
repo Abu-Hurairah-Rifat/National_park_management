@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="oop.section6.national_park_management.Wildlife-RD.Wildlife Researcher.SearchSightingsByRegion"
+            prefHeight="800.0" prefWidth="1200.0">
+
+    <VBox spacing="20" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0" 
+          AnchorPane.rightAnchor="20.0" AnchorPane.bottomAnchor="20.0">
+
+        <!-- Header -->
+        <Label text="Search Sightings by Region" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        
+        <!-- Search Panel -->
+        <TitledPane text="Search Criteria" expanded="true">
+            <GridPane hgap="15" vgap="10">
+                <padding><Insets all="15"/></padding>
+                
+                <!-- Region Selection -->
+                <Label text="Region:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <ComboBox fx:id="regionComboBox" promptText="Select Region" 
+                         GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                
+                <!-- Date Range -->
+                <Label text="Date Range:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <DatePicker fx:id="startDatePicker" promptText="Start Date"/>
+                    <Label text="to"/>
+                    <DatePicker fx:id="endDatePicker" promptText="End Date"/>
+                </HBox>
+                
+                <!-- Species Filter -->
+                <Label text="Species:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <ComboBox fx:id="speciesComboBox" promptText="All Species"
+                         GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                
+                <!-- Search Button -->
+                <HBox spacing="10" alignment="CENTER_RIGHT" 
+                      GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <Button fx:id="searchButton" text="Search" onAction="#handleSearch"/>
+                    <Button fx:id="clearButton" text="Clear Filters" onAction="#handleClearFilters"/>
+                </HBox>
+            </GridPane>
+        </TitledPane>
+        
+        <!-- Results Table -->
+        <TitledPane text="Search Results" VBox.vgrow="ALWAYS">
+            <VBox spacing="10">
+                <!-- Quick Stats -->
+                <HBox spacing="20" alignment="CENTER_LEFT">
+                    <Label text="Total Results:"/>
+                    <Label fx:id="totalResultsLabel" style="-fx-font-weight: bold;"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <TextField fx:id="quickFilterField" promptText="Quick Filter Results"/>
+                </HBox>
+                
+                <!-- Table -->
+                <TableView fx:id="sightingsTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="dateColumn" text="Date"/>
+                        <TableColumn fx:id="timeColumn" text="Time"/>
+                        <TableColumn fx:id="speciesColumn" text="Species"/>
+                        <TableColumn fx:id="locationColumn" text="Location"/>
+                        <TableColumn fx:id="notesColumn" text="Notes"/>
+                    </columns>
+                </TableView>
+                
+                <!-- Region Summary -->
+                <TitledPane text="Region Summary">
+                    <GridPane hgap="15" vgap="5">
+                        <Label text="Most Common Species:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <Label fx:id="commonSpeciesLabel" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        
+                        <Label text="Peak Activity Time:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <Label fx:id="peakTimeLabel" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        
+                        <Label text="Unique Species Count:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                        <Label fx:id="uniqueSpeciesLabel" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    </GridPane>
+                </TitledPane>
+            </VBox>
+        </TitledPane>
+        
+        <!-- Action Buttons -->
+        <HBox spacing="15" alignment="CENTER">
+            <Button fx:id="viewDetailsButton" text="View Details" onAction="#handleViewDetails"/>
+            <Button fx:id="exportCSVButton" text="Export to CSV" onAction="#handleExportCSV"/>
+            <Button fx:id="printButton" text="Print Results" onAction="#handlePrint"/>
+            <Button fx:id="returnButton" text="Return to Dashboard" onAction="#handleReturn"/>
+        </HBox>
+        
+        <!-- Status Message -->
+        <Label fx:id="statusLabel" styleClass="status-label"/>
+    </VBox>
+
+</AnchorPane>"1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="oop.section6.national_park_management.Wildlife-RD.Wildlife Researcher.SearchSightingsRegion"
+            prefHeight="400.0" prefWidth="600.0">
+
+</AnchorPane>

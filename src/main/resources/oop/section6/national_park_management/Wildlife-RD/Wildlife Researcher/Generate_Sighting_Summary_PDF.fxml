@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.chart.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="oop.section6.national_park_management.Wildlife-RD.Wildlife Researcher.GenerateSightingSummaryPDF"
+            prefHeight="800.0" prefWidth="1000.0">
+
+    <VBox spacing="20" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" 
+          AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="10.0">
+
+        <!-- Header -->
+        <Label text="Generate Sighting Summary PDF" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+        <!-- Configuration Section -->
+        <TitledPane text="Report Configuration" expanded="true">
+            <GridPane hgap="10" vgap="10">
+                <padding><Insets all="10"/></padding>
+
+                <!-- Date Range -->
+                <Label text="Date Range:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <DatePicker fx:id="startDatePicker" promptText="Start Date"/>
+                    <Label text="to"/>
+                    <DatePicker fx:id="endDatePicker" promptText="End Date"/>
+                </HBox>
+
+                <!-- Content Selection -->
+                <Label text="Include:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <CheckBox fx:id="includeChartCheckbox" text="Species Trend Chart" selected="true"/>
+                    <CheckBox fx:id="includePhotosCheckbox" text="Sighting Photos"/>
+                    <CheckBox fx:id="includeStatsCheckbox" text="Statistics Summary" selected="true"/>
+                </VBox>
+
+                <!-- Notes -->
+                <Label text="Additional Notes:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextArea fx:id="notesArea" prefRowCount="4" wrapText="true"
+                         promptText="Enter any additional notes for the report"
+                         GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            </GridPane>
+        </TitledPane>
+
+        <!-- Preview Section -->
+        <TitledPane text="Report Preview" VBox.vgrow="ALWAYS">
+            <ScrollPane fitToWidth="true">
+                <VBox fx:id="previewContainer" spacing="10" style="-fx-background-color: white;">
+                    <!-- Preview content will be added here dynamically -->
+                    <padding><Insets all="20"/></padding>
+                </VBox>
+            </ScrollPane>
+        </TitledPane>
+
+        <!-- Action Buttons -->
+        <HBox spacing="15" alignment="CENTER">
+            <Button fx:id="previewButton" text="Update Preview" onAction="#handleUpdatePreview"/>
+            <Button fx:id="generateButton" text="Generate PDF" onAction="#handleGeneratePDF"/>
+            <Button fx:id="openButton" text="Open PDF" onAction="#handleOpenPDF" disable="true"/>
+            <Button fx:id="cancelButton" text="Cancel" onAction="#handleCancel"/>
+        </HBox>
+
+        <!-- Progress and Status -->
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <ProgressBar fx:id="progressBar" prefWidth="200"/>
+            <Label fx:id="statusLabel" styleClass="status-label"/>
+        </HBox>
+    </VBox>
+
+</AnchorPane>
