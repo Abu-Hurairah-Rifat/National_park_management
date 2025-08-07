@@ -1,14 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="oop.section6.national_park_management.Maintenance_Staff.UpdateMaintenanceIssueStatusController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="605.0" prefWidth="600.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.Maintenance_Staff.UpdateMaintenanceIssueStatusController">
+   <children>
+      <Label layoutX="90.0" layoutY="27.0" text="Update Maintenance Issue Status " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman" size="31.0" />
+         </font>
+      </Label>
+      <TableView fx:id="maintenceIssueTableView" layoutX="47.0" layoutY="122.0" prefHeight="200.0" prefWidth="525.0">
+         <columns>
+            <TableColumn fx:id="issueIdTableColumn" prefWidth="75.0" text="Issue ID" />
+            <TableColumn fx:id="issueTypeTableColumn" prefWidth="75.0" text="Issue Type" />
+            <TableColumn fx:id="locationTableColumn" prefWidth="95.20001220703125" text="Location" />
+            <TableColumn fx:id="issueDescriptionTableColumn" prefWidth="190.39996337890625" text="Description" />
+            <TableColumn fx:id="priorityLevelTableColumn" prefWidth="90.4000244140625" text="Priority Level" />
+         </columns>
+      </TableView>
+      <Button layoutX="244.0" layoutY="562.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: teal;" text="Back to Dashboard" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField layoutX="345.0" layoutY="90.0" />
+      <Button layoutX="508.0" layoutY="89.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: teal;" text="Filter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Separator layoutY="338.0" prefHeight="2.0" prefWidth="600.0" />
+      <Label layoutX="76.0" layoutY="365.0" text="New Status" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="196.0" layoutY="361.0" prefWidth="150.0" />
+      <Label layoutX="76.0" layoutY="409.0" text="Comments/notes " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="196.0" layoutY="402.0" prefHeight="88.0" prefWidth="256.0" />
+      <Separator layoutY="546.0" prefHeight="2.0" prefWidth="600.0" />
+      <Button layoutX="196.0" layoutY="502.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: teal;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>
