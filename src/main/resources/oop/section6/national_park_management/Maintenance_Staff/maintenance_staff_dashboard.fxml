@@ -13,48 +13,48 @@
             <Font name="Times New Roman Bold" size="26.0" />
          </font>
       </Label>
-      <Button cache="true" layoutX="74.0" layoutY="100.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="Report New Issue" textFill="WHITE">
+      <Button cache="true" layoutX="74.0" layoutY="100.0" mnemonicParsing="false" onAction="#reportNewIssueButton" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="Report New Issue" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="315.0" layoutY="100.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="View Issues" textFill="WHITE">
+      <Button layoutX="315.0" layoutY="100.0" mnemonicParsing="false" onAction="#viewIssuesButton" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="View Issues" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="74.0" layoutY="180.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="Update Issue Status" textFill="WHITE">
+      <Button layoutX="74.0" layoutY="180.0" mnemonicParsing="false" onAction="#updateeIssueStatusButton" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="Update Issue Status" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="315.0" layoutY="180.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="Assign to Me" textFill="WHITE">
+      <Button layoutX="315.0" layoutY="180.0" mnemonicParsing="false" onAction="#assignMaintenanceTasksButton" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="Assign Maintenance Tasks" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="74.0" layoutY="268.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="View Schedules Tasks" textFill="WHITE">
+      <Button layoutX="74.0" layoutY="268.0" mnemonicParsing="false" onAction="#viewSchedulesTasksButton" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="View Schedules Tasks" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="315.0" layoutY="268.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="Request Supplies/Equipment" textFill="WHITE">
+      <Button layoutX="315.0" layoutY="268.0" mnemonicParsing="false" onAction="#requestSuppliesOrEquipmentButton" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="Request Supplies/Equipment" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="74.0" layoutY="354.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="View Inventory" textFill="WHITE">
+      <Button layoutX="74.0" layoutY="354.0" mnemonicParsing="false" onAction="#viewInventoryButton" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="View Inventory" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="315.0" layoutY="354.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="Record Work Log" textFill="WHITE">
+      <Button layoutX="315.0" layoutY="354.0" mnemonicParsing="false" onAction="#recordWorkLogButton" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="Record Work Log" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
       <Separator layoutY="441.0" prefHeight="7.0" prefWidth="600.0" />
-      <Button layoutX="269.0" layoutY="462.0" mnemonicParsing="false" style="-fx-background-color: teal;" text="Log Out" textFill="WHITE">
+      <Button layoutX="269.0" layoutY="462.0" mnemonicParsing="false" onAction="#logOutButton" style="-fx-background-color: teal;" text="Log Out" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

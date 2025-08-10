@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="683.0" prefWidth="601.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.Maintenance_Staff.MaintenanceWorkLogsController">
    <children>
       <Label layoutX="193.0" layoutY="24.0" text="Record Work Log" textFill="WHITE">
@@ -25,41 +24,41 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="274.0" layoutY="101.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="issueIdTextField" layoutX="274.0" layoutY="101.0" prefHeight="26.0" prefWidth="175.0" />
       <Label layoutX="156.0" layoutY="146.0" text="Start Time" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <DatePicker layoutX="274.0" layoutY="142.0" />
+      <DatePicker fx:id="startDateDatepicker" layoutX="274.0" layoutY="142.0" />
       <Label layoutX="156.0" layoutY="191.0" text="End Time" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <DatePicker layoutX="274.0" layoutY="187.0" />
+      <DatePicker fx:id="endDateDatepicker" layoutX="274.0" layoutY="187.0" />
       <Label layoutX="156.0" layoutY="235.0" text="Details of Work Performed" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextArea layoutX="156.0" layoutY="260.0" prefHeight="67.0" prefWidth="294.0" />
-      <Button layoutX="343.0" layoutY="341.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: teal;" text="Save Log" textFill="WHITE">
+      <TextArea fx:id="detailsOfWorkPerformedTextArea" layoutX="156.0" layoutY="260.0" prefHeight="67.0" prefWidth="294.0" />
+      <Button layoutX="343.0" layoutY="341.0" mnemonicParsing="false" onAction="#saveLogButton" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: teal;" text="Save Log" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
       <Separator layoutY="376.0" prefHeight="6.0" prefWidth="600.0" />
-      <TableView layoutX="42.0" layoutY="407.0" prefHeight="200.0" prefWidth="522.0">
+      <TableView fx:id="recordWorkLogTableView" layoutX="42.0" layoutY="407.0" prefHeight="200.0" prefWidth="522.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Issue ID" />
-          <TableColumn prefWidth="75.0" text="Start Time" />
-            <TableColumn prefWidth="75.0" text="End Time" />
-            <TableColumn prefWidth="295.9999755859375" text="Details of Work Performed" />
+          <TableColumn fx:id="issueIdTableColumn" prefWidth="75.0" text="Issue ID" />
+          <TableColumn fx:id="startTimeTableColumn" prefWidth="75.0" text="Start Time" />
+            <TableColumn fx:id="endTimeTableColumn" prefWidth="75.0" text="End Time" />
+            <TableColumn fx:id="detailsOfWorkPerformedTableColumn" prefWidth="295.9999755859375" text="Details of Work Performed" />
         </columns>
       </TableView>
       <Separator layoutX="1.0" layoutY="619.0" prefHeight="6.0" prefWidth="600.0" />
-      <Button layoutX="243.0" layoutY="640.0" mnemonicParsing="false" onAction="#backToDashboaedButton" style="-fx-background-color: teal;" text="Back to Dashboard" textFill="WHITE">
+      <Button layoutX="243.0" layoutY="640.0" mnemonicParsing="false" onAction="#backToDashboardButton" style="-fx-background-color: teal;" text="Back to Dashboard" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
