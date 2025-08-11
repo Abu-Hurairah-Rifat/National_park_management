@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="575.0" prefWidth="601.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.Maintenance_Staff.RequestSuppliesEquipmentController">
    <children>
       <Label layoutX="121.0" layoutY="14.0" text="Request Supplies/Equipment" textFill="WHITE">
@@ -24,20 +23,20 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="284.0" layoutY="91.0" prefHeight="26.0" prefWidth="150.0" />
+      <TextField fx:id="itemNameTextField" layoutX="284.0" layoutY="91.0" prefHeight="26.0" prefWidth="150.0" />
       <Label layoutX="166.0" layoutY="136.0" text="Quantity" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="284.0" layoutY="132.0" prefHeight="26.0" prefWidth="150.0" />
+      <TextField fx:id="quantityTextField" layoutX="284.0" layoutY="132.0" prefHeight="26.0" prefWidth="150.0" />
       <Label layoutX="166.0" layoutY="176.0" text="Urgency Level" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox layoutX="284.0" layoutY="172.0" prefWidth="150.0" />
-      <Button layoutX="329.0" layoutY="213.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: teal;" text="Submit Request" textFill="WHITE">
+      <ComboBox fx:id="urgencyLevelComboBox" layoutX="284.0" layoutY="172.0" prefWidth="150.0" />
+      <Button layoutX="329.0" layoutY="213.0" mnemonicParsing="false" onAction="#submitRequestButton" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: teal;" text="Submit Request" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -52,7 +51,7 @@
         </columns>
       </TableView>
       <Separator layoutX="1.0" layoutY="508.0" prefHeight="6.0" prefWidth="600.0" />
-      <Button layoutX="243.0" layoutY="529.0" mnemonicParsing="false" onAction="#backToDashboaedButton" style="-fx-background-color: teal;" text="Back to Dashboard" textFill="WHITE">
+      <Button layoutX="243.0" layoutY="529.0" mnemonicParsing="false" onAction="#backToDashboardButton" style="-fx-background-color: teal;" text="Back to Dashboard" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

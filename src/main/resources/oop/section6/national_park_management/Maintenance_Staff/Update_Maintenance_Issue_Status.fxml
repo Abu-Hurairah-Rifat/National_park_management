@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="605.0" prefWidth="600.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.Maintenance_Staff.UpdateMaintenanceIssueStatusController">
    <children>
       <Label layoutX="90.0" layoutY="27.0" text="Update Maintenance Issue Status " textFill="WHITE">
@@ -28,13 +27,13 @@
             <TableColumn fx:id="priorityLevelTableColumn" prefWidth="90.4000244140625" text="Priority Level" />
          </columns>
       </TableView>
-      <Button layoutX="244.0" layoutY="562.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: teal;" text="Back to Dashboard" textFill="WHITE">
+      <Button layoutX="244.0" layoutY="562.0" mnemonicParsing="false" onAction="#backToDashboardButton" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: teal;" text="Back to Dashboard" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <TextField layoutX="345.0" layoutY="90.0" />
-      <Button layoutX="508.0" layoutY="89.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: teal;" text="Filter" textFill="WHITE">
+      <TextField fx:id="issueKeyWordTextField" layoutX="345.0" layoutY="90.0" />
+      <Button layoutX="508.0" layoutY="89.0" mnemonicParsing="false" onAction="#filterButton" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: teal;" text="Filter" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -45,18 +44,24 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox layoutX="196.0" layoutY="361.0" prefWidth="150.0" />
+      <ComboBox fx:id="newStatusComboBox" layoutX="196.0" layoutY="361.0" prefWidth="150.0" />
       <Label layoutX="76.0" layoutY="409.0" text="Comments/notes " textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextArea layoutX="196.0" layoutY="402.0" prefHeight="88.0" prefWidth="256.0" />
+      <TextArea fx:id="commentsTextArea" layoutX="196.0" layoutY="402.0" prefHeight="88.0" prefWidth="256.0" />
       <Separator layoutY="546.0" prefHeight="2.0" prefWidth="600.0" />
-      <Button layoutX="196.0" layoutY="502.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: teal;" text="Update" textFill="WHITE">
+      <Button layoutX="196.0" layoutY="502.0" mnemonicParsing="false" onAction="#updateIssueButton" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: teal;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
+      <Separator layoutY="70.0" prefHeight="2.0" prefWidth="600.0" />
+      <Label layoutX="272.0" layoutY="94.0" text="Key Word" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
