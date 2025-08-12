@@ -23,7 +23,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="74.0" layoutY="180.0" mnemonicParsing="false" onAction="#updateeIssueStatusButton" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="Update Issue Status" textFill="WHITE">
+      <Button layoutX="74.0" layoutY="180.0" mnemonicParsing="false" onAction="#updateIssueStatusButton" prefHeight="62.0" prefWidth="210.0" style="-fx-background-color: teal;" text="Update Issue Status" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
