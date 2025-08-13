@@ -10,23 +10,6 @@ import oop.section6.national_park_management.HelloApplication;
 
 public class MaintenanceStaffDashboardController {
 
-    @Deprecated
-    @FXML
-    void logOutButton(ActionEvent event) {
-        try{
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("log-in-view.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage nextStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            nextStage.setTitle("Lawachara National Park");
-            nextStage.setScene(scene);
-            nextStage.show();
-        }
-        catch (Exception e) {
-            //throw new RuntimeException(e);
-        }
-
-    }
-
     @FXML
     void recordWorkLogButton(ActionEvent event) {
         try{
