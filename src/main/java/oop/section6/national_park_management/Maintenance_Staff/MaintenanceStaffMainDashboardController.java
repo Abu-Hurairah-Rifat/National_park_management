@@ -2,6 +2,7 @@ package oop.section6.national_park_management.Maintenance_Staff;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -116,6 +117,21 @@ public class MaintenanceStaffMainDashboardController
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Maintenance_Staff/View_Schedules_Preventative_Tasks.fxml"));
             maintenceStaffMainDashboardBorderPane.setCenter(fxmlLoader.load());
+        }
+        catch (Exception e) {
+            //throw new RuntimeException(e);
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void logOutButton(ActionEvent actionEvent) {
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("log-in-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage nextStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+            nextStage.setTitle("Lawachara National Park");
+            nextStage.setScene(scene);
+            nextStage.show();
         }
         catch (Exception e) {
             //throw new RuntimeException(e);
