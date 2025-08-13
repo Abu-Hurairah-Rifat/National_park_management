@@ -35,7 +35,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <Label text="Select Visit Date:" />-
+                        <Label text="Select Visit Date:" />
                         <DatePicker fx:id="visitDatePicker" prefHeight="25.0" prefWidth="283.0" promptText="Choose a date" GridPane.columnIndex="1" />
                         <Label text="Number of Tickets:" GridPane.rowIndex="1" />
                         <Spinner fx:id="numberOfTicketsSpinner" editable="true" prefHeight="25.0" prefWidth="292.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
@@ -52,7 +52,7 @@
                         <HBox spacing="10.0">
                             <children>
                                 <Label text="Total Cost:" />
-                                <Label fx:id="totalCostLabel">
+                                <Label fx:id="totalCostLabel" text="0.00">
                                     <font>
                                         <Font name="System Bold" size="12.0" />
                                     </font>
