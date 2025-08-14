@@ -2,10 +2,15 @@ package oop.section6.national_park_management.Permit_Officer;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import oop.section6.national_park_management.HelloApplication;
 
 public class PermitOfficerModifyPermitsController {
 
@@ -19,9 +24,6 @@ public class PermitOfficerModifyPermitsController {
     private TableView<?> permitDataTableView;
 
     @FXML
-    private TextField permitIDtextField;
-
-    @FXML
     private TableColumn<?, ?> permitIdTableColumn;
 
     @FXML
@@ -29,9 +31,6 @@ public class PermitOfficerModifyPermitsController {
 
     @FXML
     private TableColumn<?, ?> phoneTableColumn;
-
-    @FXML
-    private Label showSearchResultLabel;
 
     @FXML
     private TableColumn<?, ?> totalFeeTableColumn;
@@ -44,6 +43,10 @@ public class PermitOfficerModifyPermitsController {
 
     @FXML
     private TextField visitorNameTextField;
+    @FXML
+    private Label showSearchResultLabel;
+    @FXML
+    private TextField permitIDtextField;
 
     @FXML
     void modifyPermitsButton(ActionEvent event) {
@@ -60,4 +63,22 @@ public class PermitOfficerModifyPermitsController {
 
     }
 
+    @FXML
+    public void backToDashboardButton(ActionEvent actionEvent) {
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Permit_Officer/Permit_Officer_Main_Dashboard.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage nextStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+            nextStage.setTitle("Lawachara National Park");
+            nextStage.setScene(scene);
+            nextStage.show();
+        }
+        catch (Exception e) {
+            //throw new RuntimeException(e);
+        }
+    }
+
+    @Deprecated
+    public void issuePermitButton(ActionEvent actionEvent) {
+    }
 }
