@@ -3,7 +3,11 @@ package oop.section6.national_park_management.EcoTourGuide;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+import oop.section6.national_park_management.HelloApplication;
 
 public class EcoTourGuideDashboardController {
 
@@ -92,6 +96,16 @@ public class EcoTourGuideDashboardController {
 
     @FXML
     void handleLogoutClick(ActionEvent event) {
-        System.out.println("Logout button clicked.");
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("log-in-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage nextStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            nextStage.setTitle("Lawachara National Park");
+            nextStage.setScene(scene);
+            nextStage.show();
+        }
+        catch (Exception e) {
+            //throw new RuntimeException(e);
+        }
     }
 }

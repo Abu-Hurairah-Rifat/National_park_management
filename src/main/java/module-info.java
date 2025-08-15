@@ -1,6 +1,7 @@
 module oop.section6.national_park_management {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
 
     opens oop.section6.national_park_management to javafx.fxml;
