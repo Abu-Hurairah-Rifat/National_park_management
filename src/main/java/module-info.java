@@ -10,4 +10,5 @@ module oop.section6.national_park_management {
     exports oop.section6.national_park_management.Maintenance_Staff;
     opens oop.section6.national_park_management.Maintenance_Staff to javafx.fxml;
     opens oop.section6.national_park_management.Tourist to javafx.fxml;
+    opens oop.section6.national_park_management.EcoTourGuide to javafx.fxml;
 }
