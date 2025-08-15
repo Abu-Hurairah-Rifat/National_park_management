@@ -55,6 +55,17 @@ public class PermitOfficerModifyPermitsController {
 
     @FXML
     void modifyPermitsButton(ActionEvent event) {
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Permit_Officer/permitOfficer_Modify_PermitsForm.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage nextStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            nextStage.setTitle("Lawachara National Park");
+            nextStage.setScene(scene);
+            nextStage.show();
+        }
+        catch (Exception e) {
+            //throw new RuntimeException(e);
+        }
 
     }
 

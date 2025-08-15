@@ -66,7 +66,7 @@ public class PermitOfficerDashboardController {
     @FXML
     void modifyPermitButton(ActionEvent event) {
         try{
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Permit_Officer/permitOfficer_Modify_PermitsForm.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Permit_Officer/permitOfficer_Modify_Permits.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             nextStage.setTitle("Lawachara National Park");
