@@ -54,10 +54,5 @@
       </Button>
       <Separator layoutY="75.0" prefHeight="6.0" prefWidth="600.0" />
       <Separator layoutX="1.0" layoutY="432.0" prefHeight="6.0" prefWidth="600.0" />
-      <Button layoutX="269.0" layoutY="449.0" mnemonicParsing="false" onAction="#logOutButton" style="-fx-background-color: teal;" text="Log Out" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>
