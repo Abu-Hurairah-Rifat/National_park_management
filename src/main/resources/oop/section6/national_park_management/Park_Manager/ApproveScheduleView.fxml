@@ -1,46 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="oop.section6.national_park_management.Park_Ranger.ApproveScheduleController"
-            prefWidth="650" prefHeight="600">
+<AnchorPane prefHeight="600" prefWidth="650" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.Park_Manager.ApproveScheduleController">
 
-    <top>
-        <Label text="Approve Schedules"
-               style="-fx-font-size: 20px; -fx-font-weight: bold;"
-               BorderPane.alignment="CENTER">
-            <padding>
-                <Insets top="20" right="20" bottom="20" left="20"/>
-            </padding>
-        </Label>
-    </top>
+    <!-- Title -->
+    <Label layoutX="200" layoutY="20" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Approve Ranger Schedules" />
 
-    <center>
-        <VBox spacing="15" alignment="CENTER">
-            <padding>
-                <Insets top="20" right="20" bottom="20" left="20"/>
-            </padding>
+    <!-- Back Button -->
+    <Button fx:id="backButton" layoutX="529.0" layoutY="480.0" prefWidth="60" text="Back" />
 
-            <TableView fx:id="scheduleTable" prefHeight="400" prefWidth="600">
-                <columns>
-                    <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
-                    <TableColumn fx:id="colRanger" text="Ranger Name" prefWidth="120"/>
-                    <TableColumn fx:id="colDate" text="Date" prefWidth="100"/>
-                    <TableColumn fx:id="colTimeSlot" text="Time Slot" prefWidth="100"/>
-                    <TableColumn fx:id="colZone" text="Zone" prefWidth="100"/>
-                    <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
-                </columns>
-            </TableView>
+    <!-- Date Picker -->
+    <DatePicker fx:id="datePicker" layoutX="50" layoutY="70" prefWidth="200" />
 
-            <HBox spacing="10" alignment="CENTER">
-                <Button fx:id="approveBtn" text="Approve" prefWidth="120"/>
-                <Button fx:id="rejectBtn" text="Reject" prefWidth="120"/>
-                <Button fx:id="refreshBtn" text="Refresh" prefWidth="120"/>
-            </HBox>
-        </VBox>
-    </center>
-</BorderPane>
+    <!-- Table -->
+    <TableView fx:id="scheduleTable" layoutX="50" layoutY="110" prefHeight="350" prefWidth="550">
+        <columns>
+            <TableColumn fx:id="colRanger" prefWidth="200" text="Ranger Name" />
+            <TableColumn fx:id="colDate" prefWidth="150" text="Date" />
+            <TableColumn fx:id="colStatus" prefWidth="200" text="Status" />
+        </columns>
+    </TableView>
+
+    <!-- Approve Button -->
+    <Button fx:id="approveButton" layoutX="50" layoutY="480" prefWidth="200" text="Approve Selected" />
+
+</AnchorPane>

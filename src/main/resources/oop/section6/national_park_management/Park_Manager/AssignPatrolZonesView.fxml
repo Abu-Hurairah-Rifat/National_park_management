@@ -1,44 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="oop.section6.national_park_management.Park_Ranger.AssignPatrolZonesController"
-            prefWidth="650" prefHeight="600">
+<AnchorPane prefHeight="600" prefWidth="650" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.Park_Manager.AssignPatrolZonesController">
 
-    <top>
-        <Label text="Assign Patrol Zones"
-               style="-fx-font-size: 20px; -fx-font-weight: bold;"
-               BorderPane.alignment="CENTER">
-            <padding>
-                <Insets top="20" right="20" bottom="20" left="20"/>
-            </padding>
-        </Label>
-    </top>
+    <!-- Title -->
+    <Label layoutX="240" layoutY="20" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Assign Patrol Zones" />
 
-    <center>
-        <VBox spacing="20" alignment="CENTER">
-            <padding>
-                <Insets top="20" right="20" bottom="20" left="20"/>
-            </padding>
+    <!-- Back Button -->
+    <Button fx:id="backButton" layoutX="504.0" layoutY="480.0" prefWidth="60" text="Back" />
 
-            <HBox spacing="15" alignment="CENTER">
-                <Label text="Select Ranger:"/>
-                <ComboBox fx:id="rangerComboBox" promptText="Choose Ranger" prefWidth="200"/>
-            </HBox>
+    <!-- Date Picker -->
+    <DatePicker fx:id="datePicker" layoutX="50" layoutY="70" prefWidth="200" />
 
-            <TableView fx:id="zoneTable" prefHeight="350" prefWidth="600">
-                <columns>
-                    <TableColumn fx:id="colZoneId" text="Zone ID" prefWidth="100"/>
-                    <TableColumn fx:id="colZoneName" text="Zone Name" prefWidth="200"/>
-                    <TableColumn fx:id="colBoundaries" text="Boundaries" prefWidth="300"/>
-                </columns>
-            </TableView>
+    <!-- Table -->
+    <TableView fx:id="zoneTable" layoutX="50" layoutY="110" prefHeight="350" prefWidth="550">
+        <columns>
+            <TableColumn fx:id="colRanger" prefWidth="200" text="Ranger Name" />
+            <TableColumn fx:id="colZone" prefWidth="200" text="Assigned Zone" />
+            <TableColumn fx:id="colDate" prefWidth="150" text="Date Assigned" />
+        </columns>
+    </TableView>
 
-            <Button fx:id="assignBtn" text="Assign Selected Zone" prefWidth="200"/>
-        </VBox>
-    </center>
-</BorderPane>
+    <!-- Assign Button -->
+    <Button fx:id="assignButton" layoutX="50" layoutY="480" prefWidth="200" text="Assign Zone" />
+
+</AnchorPane>
