@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="conservation.GenerateReportController">
+    <children>
+        <Label layoutX="150.0" layoutY="20.0" text="Generate Report" textFill="WHITE">
+            <font><Font name="Times New Roman Bold" size="24.0"/></font>
+        </Label>
+
+        <Label layoutX="50.0" layoutY="70.0" text="Title:" textFill="WHITE"/>
+        <TextField fx:id="titleField" layoutX="150.0" layoutY="70.0" prefWidth="300.0"/>
+
+        <Label layoutX="50.0" layoutY="110.0" text="Content:" textFill="WHITE"/>
+        <TextArea fx:id="contentArea" layoutX="150.0" layoutY="110.0" prefWidth="300.0" prefHeight="250.0"/>
+
+        <Label layoutX="50.0" layoutY="370.0" text="References:" textFill="WHITE"/>
+        <TextArea fx:id="referencesArea" layoutX="150.0" layoutY="370.0" prefWidth="300.0" prefHeight="50.0"/>
+
+        <Button layoutX="150.0" layoutY="440.0" mnemonicParsing="false" onAction="#generateReport" text="Generate" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="100.0"/>
+        <Button layoutX="300.0" layoutY="440.0" mnemonicParsing="false" onAction="#backToDashboard" text="Back" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="100.0"/>
+    </children>
+</AnchorPane>

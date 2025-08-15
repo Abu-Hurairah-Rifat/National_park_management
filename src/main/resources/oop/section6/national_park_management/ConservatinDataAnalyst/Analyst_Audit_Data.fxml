@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="conservation.AuditDataController">
+    <children>
+        <Label layoutX="200.0" layoutY="20.0" text="Data Audit" textFill="WHITE">
+            <font><Font name="Times New Roman Bold" size="24.0"/></font>
+        </Label>
+
+        <TableView fx:id="dataTable" layoutX="50.0" layoutY="70.0" prefHeight="350.0" prefWidth="500.0">
+            <columns>
+                <TableColumn text="Dataset" prefWidth="150"/>
+                <TableColumn text="Status" prefWidth="100"/>
+                <TableColumn text="Last Audited" prefWidth="150"/>
+                <TableColumn text="Issues" prefWidth="100"/>
+            </columns>
+        </TableView>
+
+        <Button layoutX="250.0" layoutY="440.0" mnemonicParsing="false" onAction="#backToDashboard" text="Back" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="100.0"/>
+    </children>
+</AnchorPane>

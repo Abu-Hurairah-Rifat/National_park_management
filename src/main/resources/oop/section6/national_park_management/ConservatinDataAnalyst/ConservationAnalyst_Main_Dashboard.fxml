@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="conservation.AnalystDashboardController">
+    <children>
+        <Label layoutX="150.0" layoutY="30.0" text="Conservation Analyst" textFill="WHITE">
+            <font>
+                <Font name="Times New Roman Bold" size="26.0" />
+            </font>
+        </Label>
+
+        <!-- Buttons for all 8 goals -->
+        <Button layoutX="50.0" layoutY="100.0" mnemonicParsing="false" onAction="#analyzePopulation" text="1. Analyze Population" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="200.0"/>
+        <Button layoutX="50.0" layoutY="150.0" mnemonicParsing="false" onAction="#generateReport" text="2. Generate Report" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="200.0"/>
+        <Button layoutX="50.0" layoutY="200.0" mnemonicParsing="false" onAction="#auditData" text="3. Audit Data" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="200.0"/>
+        <Button layoutX="50.0" layoutY="250.0" mnemonicParsing="false" onAction="#compareTrends" text="4. Compare Trends" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="200.0"/>
+
+        <Button layoutX="350.0" layoutY="100.0" mnemonicParsing="false" onAction="#updateMetrics" text="5. Update Metrics" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="200.0"/>
+        <Button layoutX="350.0" layoutY="150.0" mnemonicParsing="false" onAction="#submitPolicy" text="6. Submit Policy" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="200.0"/>
+        <Button layoutX="350.0" layoutY="200.0" mnemonicParsing="false" onAction="#monitorHabitat" text="7. Monitor Habitat" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="200.0"/>
+        <Button layoutX="350.0" layoutY="250.0" mnemonicParsing="false" onAction="#exportDatasets" text="8. Export Datasets" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="200.0"/>
+
+        <Separator layoutY="80.0" prefWidth="600.0"/>
+        <Separator layoutY="350.0" prefWidth="600.0"/>
+
+        <Button layoutX="250.0" layoutY="380.0" mnemonicParsing="false" text="Log Out" style="-fx-background-color: teal;" textFill="WHITE"/>
+    </children>
+</AnchorPane>

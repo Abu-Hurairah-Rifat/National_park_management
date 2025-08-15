@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="conservation.AnalyzePopulationController">
+    <children>
+        <Label layoutX="150.0" layoutY="20.0" text="Analyze Population" textFill="WHITE">
+            <font>
+                <Font name="Times New Roman Bold" size="24.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="50.0" layoutY="70.0" text="Species:" textFill="WHITE"/>
+        <ComboBox fx:id="speciesCombo" layoutX="150.0" layoutY="70.0" prefWidth="300.0"/>
+
+        <Label layoutX="50.0" layoutY="110.0" text="Year Range:" textFill="WHITE"/>
+        <TextField fx:id="startYear" layoutX="150.0" layoutY="110.0" promptText="Start Year" prefWidth="140.0"/>
+        <TextField fx:id="endYear" layoutX="300.0" layoutY="110.0" promptText="End Year" prefWidth="140.0"/>
+
+        <TableView fx:id="dataTable" layoutX="50.0" layoutY="150.0" prefHeight="150.0" prefWidth="400.0">
+            <columns>
+                <TableColumn text="Year" prefWidth="100"/>
+                <TableColumn text="Population" prefWidth="150"/>
+                <TableColumn text="Change" prefWidth="150"/>
+            </columns>
+        </TableView>
+
+        <Button layoutX="200.0" layoutY="320.0" mnemonicParsing="false" onAction="#analyze" text="Analyze" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="100.0"/>
+        <Button layoutX="200.0" layoutY="360.0" mnemonicParsing="false" onAction="#backToDashboard" text="Back" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="100.0"/>
+    </children>
+</AnchorPane>

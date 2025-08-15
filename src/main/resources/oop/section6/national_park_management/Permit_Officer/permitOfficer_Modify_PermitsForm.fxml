@@ -5,13 +5,11 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="673.0" prefWidth="600.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.Permit_Officer.PermitOfficerModifyPermitsFormController">
+<AnchorPane prefHeight="453.0" prefWidth="601.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.Permit_Officer.PermitOfficerModifyPermitsFormController">
    <children>
       <Label layoutX="202.0" layoutY="30.0" text="Modify Permit" textFill="WHITE">
          <font>
@@ -23,18 +21,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <TableView fx:id="permitDataTableView" layoutX="32.0" layoutY="404.0" prefHeight="200.0" prefWidth="536.0">
-         <columns>
-            <TableColumn fx:id="permitIdTableColumn" prefWidth="86.4000244140625" text="Permit ID" />
-            <TableColumn fx:id="visitorNameTableColumn" prefWidth="80.800048828125" text="Visitor Name" />
-            <TableColumn fx:id="emailTableColumn" minWidth="0.0" prefWidth="79.20001220703125" text="Email" />
-            <TableColumn fx:id="phoneTableColumn" prefWidth="79.20001220703125" text="Phone" />
-            <TableColumn fx:id="permitTypeTableColumn" prefWidth="52.79998779296875" text="Permit Type" />
-            <TableColumn fx:id="noOfVisitorsTableColumn" prefWidth="48.7999267578125" text="Number of Visitors" />
-            <TableColumn fx:id="visitDateTableColumn" prefWidth="50.4000244140625" text="Visit Date" />
-            <TableColumn fx:id="totalFeeTableColumn" prefWidth="53.5999755859375" text="Total Fee" />
-         </columns>
-      </TableView>
       <Label layoutX="133.0" layoutY="120.0" text="Visitor Name" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -71,12 +57,12 @@
       <ComboBox fx:id="permitTypeComboBox" layoutX="286.0" layoutY="227.0" prefHeight="26.0" prefWidth="175.0" />
       <TextField fx:id="noOfVisitorsTextField" layoutX="285.0" layoutY="265.0" prefHeight="26.0" prefWidth="175.0" />
       <DatePicker fx:id="visitDateDatePicker" layoutX="285.0" layoutY="304.0" />
-      <Button layoutX="238.0" layoutY="626.0" mnemonicParsing="false" onAction="#backToDashboardButton" style="-fx-background-color: teal;" text="Back to Dashboard" textFill="WHITE">
+      <Button layoutX="273.0" layoutY="410.0" mnemonicParsing="false" onAction="#cancelButton" style="-fx-background-color: teal;" text="Cancel" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
       <Separator layoutY="90.0" prefHeight="0.0" prefWidth="600.0" />
-      <Separator layoutY="613.0" prefHeight="0.0" prefWidth="600.0" />
+      <Separator layoutX="1.0" layoutY="394.0" prefHeight="0.0" prefWidth="600.0" />
    </children>
 </AnchorPane>

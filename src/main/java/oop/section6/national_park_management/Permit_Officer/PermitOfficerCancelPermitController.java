@@ -13,6 +13,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import oop.section6.national_park_management.HelloApplication;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 public class PermitOfficerCancelPermitController {
@@ -80,10 +83,40 @@ public class PermitOfficerCancelPermitController {
     @FXML
     void searchPermitsButton(ActionEvent event) {
 
+
     }
 
     @FXML
     void viewAllPermitsButton(ActionEvent event) {
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try{
+            File f = new File("PermitInfo.bin");
+            if (f.exists()){
+                fis = new FileInputStream(f);
+            }
+            else{
+                //Alert: File does not exist
+            }
+            if (fis!= null){
+                ois = new ObjectInputStream(fis);
+            }
+            while (true){
+                permitDataTableView.getItems().add((IssuePermit)ois.readObject());
+
+            }
+
+        }
+
+        catch (Exception e) {
+            try{
+                ois.close();
+            }
+            catch (Exception ex) {
+                //
+            }
+        }
 
     }
 
