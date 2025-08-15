@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600" prefWidth="650"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="oop.section6.national_park_management.Park_Ranger.ParkRangerController">
+
+    <!-- Title -->
+    <Label layoutX="209.0" layoutY="35.0" prefHeight="59.0" prefWidth="233.0"
+           style="-fx-font-size: 20px; -fx-font-weight: bold;"
+           text="Park Ranger Dashboard"
+           textAlignment="CENTER" textFill="#229e81">
+        <font>
+            <Font name="System Bold" size="50.0"/>
+        </font>
+    </Label>
+
+    <!-- Buttons -->
+    <Button layoutX="50.0" layoutY="134.0" prefHeight="50" prefWidth="250" text="Submit Patrol Schedule" onAction="#openSubmitPatrolSchedule"/>
+    <Button layoutX="350.0" layoutY="134.0" prefHeight="50" prefWidth="250" text="Record Wildlife Sighting" onAction="#openRecordWildlifeSighting"/>
+
+    <Button layoutX="50.0" layoutY="217.0" prefHeight="50" prefWidth="250" text="File Incident Report" onAction="#openFileIncidentReport"/>
+    <Button layoutX="350.0" layoutY="217.0" prefHeight="50" prefWidth="250" text="View Patrol Zone Map" onAction="#openViewPatrolZoneMap"/>
+
+    <Button layoutX="50.0" layoutY="315.0" prefHeight="50" prefWidth="250" text="Log Maintenance Needs" onAction="#openLogMaintenanceNeeds"/>
+    <Button layoutX="350.0" layoutY="315.0" prefHeight="50" prefWidth="250" text="Check Duty Roster" onAction="#openCheckDutyRoster"/>
+
+    <Button layoutX="50.0" layoutY="405.0" prefHeight="50" prefWidth="250" text="Report Visitor Misconduct" onAction="#openReportVisitorMisconduct"/>
+    <Button layoutX="350.0" layoutY="405.0" prefHeight="50" prefWidth="250" text="Update Profile" onAction="#openUpdateProfile"/>
+
+    <!-- Logout Button -->
+    <Button layoutX="528.0" layoutY="508.0" prefHeight="30" prefWidth="80" text="Logout" onAction="#logout"/>
+
+</AnchorPane>
