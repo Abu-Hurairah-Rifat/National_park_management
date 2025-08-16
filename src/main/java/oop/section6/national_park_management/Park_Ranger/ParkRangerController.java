@@ -1,88 +1,81 @@
 package oop.section6.national_park_management.Park_Ranger;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
-import javafx.scene.layout.GridPane;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class ParkRangerController {
 
-    public GridPane buttonGrid;
+    // ================= GOAL 1 =================
     @FXML
-    private Button logoutButton;
-    @FXML
-    private Button submitScheduleBtn;
-    @FXML
-    private Button recordSightingBtn;
-    @FXML
-    private Button fileIncidentBtn;
-    @FXML
-    private Button viewZoneMapBtn;
-    @FXML
-    private Button logMaintenanceBtn;
-    @FXML
-    private Button dutyRosterBtn;
-    @FXML
-    private Button reportMisconductBtn;
-    @FXML
-    private Button updateProfileBtn;
-
-    @FXML
-    private void initialize() {
-        // Optional: initialize logic here
+    private void openSubmitPatrolSchedule(ActionEvent event) {
+        switchScene(event, "/oop/section6/national_park_management/Park Ranger/SubmitPatrolScheduleView.fxml");
     }
 
+    // ================= GOAL 2 =================
     @FXML
-    private void handleLogout(ActionEvent event) {
-        System.out.println("Logout clicked - handle scene change here.");
-        // Add logout logic
+    private void openRecordWildlifeSighting(ActionEvent event) {
+        switchScene(event, "/oop/section6/national_park_management/Park Ranger/RecordWildlifeSightingView.fxml");
     }
 
+    // ================= GOAL 3 =================
     @FXML
-    private void handleSubmitSchedule(ActionEvent event) {
-        System.out.println("Submit Patrol Schedule clicked.");
-        // Load SubmitPatrolScheduleView.fxml
+    private void openFileIncidentReport(ActionEvent event) {
+        switchScene(event, "/oop/section6/national_park_management/Park Ranger/FileIncidentReportView.fxml");
     }
 
+    // ================= GOAL 4 =================
     @FXML
-    private void handleRecordSighting(ActionEvent event) {
-        System.out.println("Record Wildlife Sighting clicked.");
-        // Load RecordWildlifeSightingView.fxml
+    private void openViewPatrolZoneMap(ActionEvent event) {
+        switchScene(event, "/oop/section6/national_park_management/Park Ranger/ViewPatrolZoneMapView.fxml");
     }
 
+    // ================= GOAL 5 =================
     @FXML
-    private void handleFileIncident(ActionEvent event) {
-        System.out.println("File Incident Report clicked.");
-        // Load FileIncidentReportView.fxml
+    private void openLogMaintenanceNeeds(ActionEvent event) {
+        switchScene(event, "/oop/section6/national_park_management/Park Ranger/LogMaintenanceNeedsView.fxml");
     }
 
+    // ================= GOAL 6 =================
     @FXML
-    private void handleViewZoneMap(ActionEvent event) {
-        System.out.println("View Patrol Zone Map clicked.");
-        // Load ViewPatrolZoneMapView.fxml
+    private void openCheckDutyRoster(ActionEvent event) {
+        switchScene(event, "/oop/section6/national_park_management/Park Ranger/CheckDutyRosterView.fxml");
     }
 
+    // ================= GOAL 7 =================
     @FXML
-    private void handleLogMaintenance(ActionEvent event) {
-        System.out.println("Log Maintenance Needs clicked.");
-        // Load LogMaintenanceNeedsView.fxml
+    private void openReportVisitorMisconduct(ActionEvent event) {
+        switchScene(event, "/oop/section6/national_park_management/Park Ranger/ReportVisitorMisconductView.fxml");
     }
 
+    // ================= GOAL 8 =================
     @FXML
-    private void handleDutyRoster(ActionEvent event) {
-        System.out.println("Check Duty Roster clicked.");
-        // Load CheckDutyRosterView.fxml
+    private void openUpdateProfile(ActionEvent event) {
+        switchScene(event, "/oop/section6/national_park_management/Park Ranger/UpdateProfileView.fxml");
     }
 
+    // ================= LOGOUT =================
     @FXML
-    private void handleReportMisconduct(ActionEvent event) {
-        System.out.println("Report Visitor Misconduct clicked.");
-        // Load ReportVisitorMisconductView.fxml
+    private void logout(ActionEvent event) {
+        switchScene(event, "/oop/section6/national_park_management/log-in-view.fxml");
     }
 
-    @FXML
-    private void handleUpdateProfile(ActionEvent event) {
-        System.out.println("Update Profile clicked.");
-        // Load UpdateProfileView.fxml
+    // ================= HELPER METHOD =================
+    private void switchScene(ActionEvent event, String fxmlPath) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Scene scene = new Scene(loader.load());
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            System.err.println("❌ ERROR: Could not load " + fxmlPath);
+            e.printStackTrace();
+        }
     }
 }

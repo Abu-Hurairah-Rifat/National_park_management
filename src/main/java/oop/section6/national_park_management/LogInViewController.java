@@ -68,7 +68,36 @@ public class LogInViewController {
             }
         }
 
-        else if (CheckName.equals("EcoTourGuide")  && CheckPassword.equals("1234")){
+        else if (CheckName.equals("Park Manager")  && CheckPassword.equals("1234")){
+            try{
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Park_Manager/ParkManagerDashboard.fxml"));
+                Scene scene = new Scene(fxmlLoader.load());
+                Stage nextStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+                nextStage.setTitle("Lawachara National Park");
+                nextStage.setScene(scene);
+                nextStage.show();
+            }
+            catch (Exception e) {
+                //throw new RuntimeException(e);
+            }
+        }
+
+        else if (CheckName.equals("Park Ranger")  && CheckPassword.equals("1234")){
+            try{
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Park Ranger/ParkRangerDashboard.fxml"));
+                Scene scene = new Scene(fxmlLoader.load());
+                Stage nextStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+                nextStage.setTitle("Lawachara National Park");
+                nextStage.setScene(scene);
+                nextStage.show();
+            }
+            catch (Exception e) {
+                //throw new RuntimeException(e);
+            }
+        }
+
+
+        else if (CheckName.equals("Eco Tour Guide")  && CheckPassword.equals("1234")){
             try{
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("EcoTourGuide/eco_tour_guide_dashboard.fxml"));
                 Scene scene = new Scene(fxmlLoader.load());
@@ -81,7 +110,6 @@ public class LogInViewController {
                 //throw new RuntimeException(e);
             }
         }
-
 
         else{
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);

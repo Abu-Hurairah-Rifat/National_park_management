@@ -76,6 +76,41 @@ public class PermitOfficerViewPermitsController {
 
     @FXML
     void searchPermitsButton(ActionEvent event) {
+        ArrayList<IssuePermit> searchPermitList = new ArrayList<IssuePermit>();
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try{
+            File f = new File("PermitInfo.bin");
+            if (f.exists()){
+                fis = new FileInputStream(f);
+            }
+            else{
+                //Alert: File does not exist
+            }
+            if (fis!= null){
+                ois = new ObjectInputStream(fis);
+            }
+            while (true){
+                searchPermitList.add((IssuePermit)ois.readObject());
+
+            }
+
+        }
+        catch (Exception e) {
+            try{
+                ois.close();
+            }
+            catch (Exception ex) {
+                //
+            }
+        }
+
+        for (IssuePermit p: searchPermitList){
+            if (p.getName().equals(visitorNameTextField.getText())){
+                showSearchResultLabel.setText(p.toString());
+            }
+        }
 
     }
 

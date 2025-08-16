@@ -13,6 +13,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import oop.section6.national_park_management.HelloApplication;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 public class PermitOfficerModifyPermitsController {
@@ -55,16 +58,95 @@ public class PermitOfficerModifyPermitsController {
 
     @FXML
     void modifyPermitsButton(ActionEvent event) {
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Permit_Officer/permitOfficer_Modify_PermitsForm.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage Stage = new Stage();
+            Stage.setTitle("Lawachara National Park");
+            Stage.setScene(scene);
+            PermitOfficerModifyPermitsFormController nextController = fxmlLoader.getController();
+            nextController.receivePermitName(visitorNameTextField.getText());
+            Stage.show();
+        }
+        catch (Exception e) {
+            //throw new RuntimeException(e);
+        }
 
     }
 
+
+
     @FXML
     void searchPermitsButton(ActionEvent event) {
+        ArrayList<IssuePermit> searchPermitList = new ArrayList<IssuePermit>();
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try{
+            File f = new File("PermitInfo.bin");
+            if (f.exists()){
+                fis = new FileInputStream(f);
+            }
+            else{
+                //Alert: File does not exist
+            }
+            if (fis!= null){
+                ois = new ObjectInputStream(fis);
+            }
+            while (true){
+                searchPermitList.add((IssuePermit)ois.readObject());
+
+            }
+
+        }
+        catch (Exception e) {
+            try{
+                ois.close();
+            }
+            catch (Exception ex) {
+                //
+            }
+        }
+
+        for (IssuePermit p: searchPermitList){
+            if (p.getName().equals(visitorNameTextField.getText())){
+                showSearchResultLabel.setText("Match found. Please press the modify button to modify this information.");
+            }
+        }
 
     }
 
     @FXML
     void viewAllPermitsButton(ActionEvent event) {
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try{
+            File f = new File("PermitInfo.bin");
+            if (f.exists()){
+                fis = new FileInputStream(f);
+            }
+            else{
+                //Alert: File does not exist
+            }
+            if (fis!= null){
+                ois = new ObjectInputStream(fis);
+            }
+            while (true){
+                permitDataTableView.getItems().add((IssuePermit)ois.readObject());
+
+            }
+
+        }
+
+        catch (Exception e) {
+            try{
+                ois.close();
+            }
+            catch (Exception ex) {
+                //
+            }
+        }
 
 
     }
@@ -101,4 +183,9 @@ public class PermitOfficerModifyPermitsController {
         visitDateTableColumn.setCellValueFactory(new PropertyValueFactory<IssuePermit, String>("visitDate"));
         totalFeeTableColumn.setCellValueFactory(new PropertyValueFactory<IssuePermit, String>("price"));
     }
+
+    public void receivePermitName(String name){
+        visitorNameTextField.setText(name);
+    }
+
 }

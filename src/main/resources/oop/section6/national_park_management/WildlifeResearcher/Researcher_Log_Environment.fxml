@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="500.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.wildlife.LogEnvironmentController">
+    <children>
+        <Label layoutX="150.0" layoutY="20.0" text="Environment Log" textFill="WHITE">
+            <font><Font name="Times New Roman Bold" size="24.0"/></font>
+        </Label>
+
+        <Label layoutX="50.0" layoutY="70.0" text="Change:" textFill="WHITE"/>
+        <TextArea fx:id="changeDescription" layoutX="150.0" layoutY="70.0" prefWidth="300.0" prefHeight="100.0"/>
+
+        <Label layoutX="50.0" layoutY="190.0" text="Affected Species:" textFill="WHITE"/>
+        <TextField fx:id="speciesField" layoutX="150.0" layoutY="190.0" prefWidth="300.0"/>
+
+        <Label layoutX="50.0" layoutY="230.0" text="Date:" textFill="WHITE"/>
+        <DatePicker fx:id="logDate" layoutX="150.0" layoutY="230.0"/>
+
+        <Button layoutX="150.0" layoutY="280.0" mnemonicParsing="false" onAction="#logChange" text="Log" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="100.0"/>
+        <Button layoutX="300.0" layoutY="280.0" mnemonicParsing="false" onAction="#backToDashboard" text="Back" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="100.0"/>
+    </children>
+</AnchorPane>

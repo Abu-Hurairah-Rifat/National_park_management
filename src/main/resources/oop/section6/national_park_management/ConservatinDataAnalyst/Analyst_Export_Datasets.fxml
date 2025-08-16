@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="500.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.conservation.ExportDatasetsController">
+    <children>
+        <Label layoutX="150.0" layoutY="20.0" text="Export Datasets" textFill="WHITE">
+            <font><Font name="Times New Roman Bold" size="24.0"/></font>
+        </Label>
+
+        <Label layoutX="50.0" layoutY="70.0" text="Dataset:" textFill="WHITE"/>
+        <ComboBox fx:id="datasetCombo" layoutX="150.0" layoutY="70.0" prefWidth="300.0"/>
+
+        <Label layoutX="50.0" layoutY="110.0" text="Format:" textFill="WHITE"/>
+        <ComboBox fx:id="formatCombo" layoutX="150.0" layoutY="110.0" prefWidth="150.0"/>
+
+        <Label layoutX="50.0" layoutY="150.0" text="Parameters:" textFill="WHITE"/>
+        <TextArea fx:id="parametersArea" layoutX="150.0" layoutY="150.0" prefWidth="300.0" prefHeight="150.0"/>
+
+        <Button layoutX="150.0" layoutY="320.0" mnemonicParsing="false" onAction="#exportData" text="Export" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="100.0"/>
+        <Button layoutX="300.0" layoutY="320.0" mnemonicParsing="false" onAction="#backToDashboard" text="Back" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="100.0"/>
+    </children>
+</AnchorPane>

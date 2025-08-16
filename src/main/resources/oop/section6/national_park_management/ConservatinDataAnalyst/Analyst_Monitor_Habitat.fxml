@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.conservation.MonitorHabitatController">
+    <children>
+        <Label layoutX="150.0" layoutY="20.0" text="Habitat Health" textFill="WHITE">
+            <font><Font name="Times New Roman Bold" size="24.0"/></font>
+        </Label>
+
+        <Label layoutX="50.0" layoutY="70.0" text="Region:" textFill="WHITE"/>
+        <ComboBox fx:id="regionCombo" layoutX="150.0" layoutY="70.0" prefWidth="300.0"/>
+
+        <Label layoutX="50.0" layoutY="110.0" text="Health Indicators:" textFill="WHITE"/>
+        <TableView fx:id="indicatorsTable" layoutX="50.0" layoutY="140.0" prefHeight="200.0" prefWidth="400.0">
+            <columns>
+                <TableColumn text="Indicator" prefWidth="200"/>
+                <TableColumn text="Value" prefWidth="100"/>
+                <TableColumn text="Status" prefWidth="100"/>
+            </columns>
+        </TableView>
+
+        <Label layoutX="50.0" layoutY="360.0" text="Notes:" textFill="WHITE"/>
+        <TextArea fx:id="notesArea" layoutX="150.0" layoutY="360.0" prefWidth="300.0" prefHeight="50.0"/>
+
+        <Button layoutX="150.0" layoutY="430.0" mnemonicParsing="false" onAction="#saveAssessment" text="Save" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="100.0"/>
+        <Button layoutX="300.0" layoutY="430.0" mnemonicParsing="false" onAction="#backToDashboard" text="Back" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="100.0"/>
+    </children>
+</AnchorPane>

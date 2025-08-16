@@ -5,14 +5,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import oop.section6.national_park_management.HelloApplication;
 
+import java.io.*;
 import java.util.ArrayList;
 
 public class PermitOfficerCancelPermitController {
@@ -74,16 +72,126 @@ public class PermitOfficerCancelPermitController {
 
     @FXML
     void cancelPermitButton(ActionEvent event) {
+        ArrayList<IssuePermit> searchPermitList = new ArrayList<IssuePermit>();
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try{
+            File f = new File("PermitInfo.bin");
+            if (f.exists()){
+                fis = new FileInputStream(f);
+            }
+            else{
+                //Alert: File does not exist
+            }
+            if (fis!= null){
+                ois = new ObjectInputStream(fis);
+            }
+            while (true){
+                searchPermitList.add((IssuePermit)ois.readObject());
+
+            }
+
+        }
+        catch (Exception e) {
+
+            try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("PermitInfo.bin"))) {
+                for (IssuePermit s : searchPermitList) {
+                    oos.writeObject(s);
+                }
+
+                Alert fileRemovedAlert = new Alert(Alert.AlertType.INFORMATION);
+                fileRemovedAlert.setContentText("Information removed successfully.");
+                fileRemovedAlert.show();
+
+            } catch (Exception e2) {
+                try{
+                    ois.close();
+                }
+                catch (Exception e3) {
+                    //
+                }
+            }
+
+        }
+
+
+
 
     }
 
     @FXML
     void searchPermitsButton(ActionEvent event) {
+        ArrayList<IssuePermit> searchPermitList = new ArrayList<IssuePermit>();
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try{
+            File f = new File("PermitInfo.bin");
+            if (f.exists()){
+                fis = new FileInputStream(f);
+            }
+            else{
+                //Alert: File does not exist
+            }
+            if (fis!= null){
+                ois = new ObjectInputStream(fis);
+            }
+            while (true){
+                searchPermitList.add((IssuePermit)ois.readObject());
+
+            }
+
+        }
+        catch (Exception e) {
+            try{
+                ois.close();
+            }
+            catch (Exception ex) {
+                //
+            }
+        }
+
+        for (IssuePermit p: searchPermitList){
+            if (p.getName().equals(visitorNameTextField.getText())){
+                showSearchResultLabel.setText(p.toString());
+            }
+        }
+
 
     }
 
     @FXML
     void viewAllPermitsButton(ActionEvent event) {
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try{
+            File f = new File("PermitInfo.bin");
+            if (f.exists()){
+                fis = new FileInputStream(f);
+            }
+            else{
+                //Alert: File does not exist
+            }
+            if (fis!= null){
+                ois = new ObjectInputStream(fis);
+            }
+            while (true){
+                permitDataTableView.getItems().add((IssuePermit)ois.readObject());
+
+            }
+
+        }
+
+        catch (Exception e) {
+            try{
+                ois.close();
+            }
+            catch (Exception ex) {
+                //
+            }
+        }
 
     }
 

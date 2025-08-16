@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.wildlife.TeamCollaborationController">
+    <children>
+        <Label layoutX="150.0" layoutY="20.0" text="Team Collaboration" textFill="WHITE">
+            <font><Font name="Times New Roman Bold" size="24.0"/></font>
+        </Label>
+
+        <TextArea fx:id="teamNotes" layoutX="50.0" layoutY="70.0" prefWidth="400.0" prefHeight="300.0"/>
+
+        <Button layoutX="150.0" layoutY="390.0" mnemonicParsing="false" onAction="#saveNotes" text="Save" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="100.0"/>
+        <Button layoutX="300.0" layoutY="390.0" mnemonicParsing="false" onAction="#backToDashboard" text="Back" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="100.0"/>
+    </children>
+</AnchorPane>

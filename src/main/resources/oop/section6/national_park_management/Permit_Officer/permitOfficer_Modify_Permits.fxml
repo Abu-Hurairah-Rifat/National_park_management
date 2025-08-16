@@ -23,30 +23,30 @@
             <TableColumn fx:id="totalFeeTableColumn" prefWidth="57.60003662109375" text="Total Fee" />
          </columns>
       </TableView>
-      <Button layoutX="217.0" layoutY="172.0" mnemonicParsing="false" onAction="#searchPermitsButton" style="-fx-background-color: teal;" text="Search" textFill="#fff7f7">
+      <Button layoutX="217.0" layoutY="188.0" mnemonicParsing="false" onAction="#searchPermitsButton" style="-fx-background-color: teal;" text="Search" textFill="#fff7f7">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Label layoutX="32.0" layoutY="100.0" text="Permit ID" textFill="WHITE">
+      <Label layoutX="32.0" layoutY="116.0" text="Permit ID" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="permitIDtextField" layoutX="119.0" layoutY="96.0" />
-      <TextField fx:id="visitorNameTextField" layoutX="119.0" layoutY="135.0" />
-      <Label layoutX="32.0" layoutY="139.0" text="Visitor Name" textFill="WHITE">
+      <TextField fx:id="permitIDtextField" layoutX="119.0" layoutY="112.0" />
+      <TextField fx:id="visitorNameTextField" layoutX="119.0" layoutY="151.0" />
+      <Label layoutX="32.0" layoutY="155.0" text="Visitor Name" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="showSearchResultLabel" layoutX="309.0" layoutY="96.0" prefHeight="64.0" prefWidth="258.0" style="-fx-background-color: White;" textFill="TEAL" />
-      <Button layoutX="494.0" layoutY="172.0" mnemonicParsing="false" onAction="#modifyPermitsButton" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: teal;" text="Modify" textFill="#fff7f7">
+      <Label fx:id="showSearchResultLabel" layoutX="309.0" layoutY="112.0" prefHeight="64.0" prefWidth="258.0" style="-fx-background-color: White;" textFill="TEAL" />
+      <Button layoutX="494.0" layoutY="188.0" mnemonicParsing="false" onAction="#modifyPermitsButton" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: teal;" text="Modify" textFill="#fff7f7">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Separator layoutY="210.0" prefHeight="0.0" prefWidth="600.0" />
+      <Separator layoutY="226.0" prefHeight="0.0" prefWidth="600.0" />
       <Button layoutX="459.0" layoutY="241.0" mnemonicParsing="false" onAction="#viewAllPermitsButton" style="-fx-background-color: teal;" text="View All Permits" textFill="#fff7f7">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -62,5 +62,9 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
+      <Separator layoutY="496.0" prefHeight="0.0" prefWidth="600.0" />
+      <Separator layoutY="75.0" prefHeight="0.0" prefWidth="600.0" />
+      <Label layoutX="123.0" layoutY="88.0" text="Fill up any field to search" textFill="WHITE" />
+      <Separator layoutX="284.0" layoutY="77.0" orientation="VERTICAL" prefHeight="150.0" prefWidth="10.0" />
    </children>
 </AnchorPane>

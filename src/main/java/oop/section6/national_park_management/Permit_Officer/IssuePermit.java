@@ -1,5 +1,7 @@
 package oop.section6.national_park_management.Permit_Officer;
 
+import javafx.fxml.FXML;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -92,19 +94,24 @@ public class IssuePermit implements Serializable {
 
     @Override
     public String toString() {
-        return "IssuePermit{" +
-                "name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", permitType='" + permitType + '\'' +
-                ", id=" + id +
-                ", phone=" + phone +
-                ", noOfVisitor=" + noOfVisitor +
-                ", price=" + price +
-                ", visitDate=" + visitDate +
-                '}';
+        return  "Name: " + name + '\n' +
+                "Email: " + email + '\n' +
+                "Permit Type: " + permitType + '\n' +
+                "ID: " + id + '\n' +
+                "Phone: " + phone + '\n' +
+                "No Of Visitor: " + noOfVisitor + '\n' +
+                "Price: " + price + '\n' +
+                "Visit Date: " + visitDate;
     }
 
     public void CalculateTotal(){
+
+    }
+
+    public void generateId(){
+        int i = 1;
+        for (i=0; ; i++);
+
 
     }
 }
