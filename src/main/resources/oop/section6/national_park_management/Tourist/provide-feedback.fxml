@@ -43,12 +43,6 @@
                 <ComboBox fx:id="issueCategoryComboBox" prefWidth="350.0" promptText="e.g., Cleanliness, Repair" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                 <Label text="Comments:" GridPane.rowIndex="3" />
                 <TextArea fx:id="commentsArea" prefHeight="200.0" prefWidth="200.0" promptText="Please describe the issue..." wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                <HBox alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                    <children>
-                        <Button fx:id="attachPhotoButton" mnemonicParsing="false" text="Attach Photo" />
-                        <Label fx:id="photoNameLabel" text="(Optional)" />
-                    </children>
-                </HBox>
             </children>
         </GridPane>
         <HBox alignment="CENTER" spacing="20.0">

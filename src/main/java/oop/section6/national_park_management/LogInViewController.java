@@ -68,6 +68,21 @@ public class LogInViewController {
             }
         }
 
+        else if (CheckName.equals("EcoTourGuide")  && CheckPassword.equals("1234")){
+            try{
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("EcoTourGuide/eco_tour_guide_dashboard.fxml"));
+                Scene scene = new Scene(fxmlLoader.load());
+                Stage nextStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+                nextStage.setTitle("Lawachara National Park");
+                nextStage.setScene(scene);
+                nextStage.show();
+            }
+            catch (Exception e) {
+                //throw new RuntimeException(e);
+            }
+        }
+
+
         else{
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setContentText("Fill up your User Name and Password properly.");
