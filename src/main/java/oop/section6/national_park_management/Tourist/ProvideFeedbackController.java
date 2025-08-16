@@ -49,7 +49,6 @@ public class ProvideFeedbackController {
         populateComboBoxes();
 
         submitButton.setOnAction(event -> handleSubmit());
-        attachPhotoButton.setOnAction(event -> handleAttachPhoto());
     }
 
     private void populateComboBoxes() {
@@ -89,21 +88,6 @@ public class ProvideFeedbackController {
         statusLabel.setStyle("-fx-text-fill: green;");
 
         clearForm();
-    }
-
-    private void handleAttachPhoto() {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Select a Photo");
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg")
-        );
-
-        Stage stage = (Stage) attachPhotoButton.getScene().getWindow();
-        File selectedFile = fileChooser.showOpenDialog(stage);
-
-        if (selectedFile != null) {
-            photoNameLabel.setText(selectedFile.getName());
-        }
     }
 
     private void clearForm() {

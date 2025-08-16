@@ -45,12 +45,6 @@ public class AdvancedMapsController {
     }
 
     private void loadDefaultMap() {
-        try {
-            Image mapImage = new Image(getClass().getResourceAsStream("/oop/section6/national_park_management/EcoTourGuide/park_map.jpg"));
-            mapImageView.setImage(mapImage);
-        } catch (Exception e) {
-            System.err.println("Could not load placeholder map image: " + e.getMessage());
-        }
     }
 
     private void setupActionHandlers() {
