@@ -58,10 +58,6 @@ public class PermitOfficerDashboardController {
 
     }
 
-    @Deprecated
-    void logOutButton(ActionEvent event) {
-
-    }
 
     @FXML
     void modifyPermitButton(ActionEvent event) {

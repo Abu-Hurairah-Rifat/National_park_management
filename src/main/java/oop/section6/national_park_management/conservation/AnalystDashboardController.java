@@ -1,5 +1,7 @@
 package oop.section6.national_park_management.conservation;
 
+import javafx.event.ActionEvent;
+
 public class AnalystDashboardController
 {
     @javafx.fxml.FXML

@@ -19,31 +19,31 @@ public class ViewSchedulesPreventativeTasksController {
     private DatePicker endDateDatePicker;
 
     @FXML
-    private TableColumn<?, ?> issueDescriptionTableColumn;
+    private TableColumn<MaintenanceIssue, String> issueDescriptionTableColumn;
 
     @FXML
-    private TableColumn<?, ?> issueIdTableColumn;
+    private TableColumn<MaintenanceIssue, String> issueIdTableColumn;
 
     @FXML
-    private ComboBox<?> issueTypeComboBox;
+    private ComboBox<String> issueTypeComboBox;
 
     @FXML
-    private TableColumn<?, ?> issueTypeTableColumn;
+    private TableColumn<MaintenanceIssue, String> issueTypeTableColumn;
 
     @FXML
-    private TableColumn<?, ?> locationTableColumn;
+    private TableColumn<MaintenanceIssue, String> locationTableColumn;
 
     @FXML
     private TextField locationTextField;
 
     @FXML
-    private TableView<?> maintenceIssueTableView;
+    private TableView<MaintenanceIssue> maintenceIssueTableView;
 
     @FXML
-    private ComboBox<?> priorityLevelComboBox;
+    private ComboBox<String> priorityLevelComboBox;
 
     @FXML
-    private TableColumn<?, ?> priorityLevelTableColumn;
+    private TableColumn<MaintenanceIssue, String> priorityLevelTableColumn;
 
     @FXML
     private DatePicker startDateDatePicker;

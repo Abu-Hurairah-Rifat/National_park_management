@@ -16,22 +16,22 @@ import oop.section6.national_park_management.HelloApplication;
 public class PermitOfficerRespondToPermitInquiriesController {
 
     @FXML
-    private TableColumn<?, ?> inquiryDetailsTableColumn;
+    private TableColumn<Records, String> inquiryDetailsTableColumn;
 
     @FXML
-    private TableColumn<?, ?> inquiryEmailTableColumn;
+    private TableColumn<Records, String> inquiryEmailTableColumn;
 
     @FXML
-    private TableColumn<?, ?> inquiryIdTableColumn;
+    private TableColumn<Records, String> inquiryIdTableColumn;
 
     @FXML
-    private TableColumn<?, ?> inquiryNameTableColumn;
+    private TableColumn<Records, String> inquiryNameTableColumn;
 
     @FXML
-    private TableColumn<?, ?> inquirySubmissionDateTableColumn;
+    private TableColumn<Records, String> inquirySubmissionDateTableColumn;
 
     @FXML
-    private TableView<?> permitInquiriesTableView;
+    private TableView<Records> permitInquiriesTableView;
 
     @FXML
     private TextField responseEmailTextField;

@@ -14,25 +14,25 @@ import oop.section6.national_park_management.HelloApplication;
 public class AssignMaintenanceTaskController {
 
     @FXML
-    private TableColumn<?, ?> issueDescriptionTableColumn;
+    private TableColumn<MaintenanceIssue, String> issueDescriptionTableColumn;
 
     @FXML
-    private TableColumn<?, ?> issueIdTableColumn;
+    private TableColumn<MaintenanceIssue, String> issueIdTableColumn;
 
     @FXML
     private TextField issueIdTextField;
 
     @FXML
-    private TableColumn<?, ?> issueTypeTableColumn;
+    private TableColumn<MaintenanceIssue, String> issueTypeTableColumn;
 
     @FXML
-    private TableColumn<?, ?> locationTableColumn;
+    private TableColumn<MaintenanceIssue, String> locationTableColumn;
 
     @FXML
-    private TableView<?> maintenceIssueTableView;
+    private TableView<MaintenanceIssue> maintenceIssueTableView;
 
     @FXML
-    private TableColumn<?, ?> priorityLevelTableColumn;
+    private TableColumn<MaintenanceIssue, String> priorityLevelTableColumn;
 
     @FXML
     private TextField searchKeyWordTextField;

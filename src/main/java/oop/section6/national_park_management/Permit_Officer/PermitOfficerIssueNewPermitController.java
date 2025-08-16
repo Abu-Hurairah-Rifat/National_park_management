@@ -97,6 +97,16 @@ public class PermitOfficerIssueNewPermitController {
             Alert processCompleteAlert = new Alert(Alert.AlertType.INFORMATION);
             processCompleteAlert.setContentText("Permit information submitted properly");
             processCompleteAlert.show();
+
+
+            if (permitTypeComboBox.getValue().equals("Day Pass")){
+                permitTypeComboBox.setValue("10");
+
+            }
+
+
+
+
             IssuePermit issuePermitToBeAdded = new IssuePermit(
                     visitorNameTextField.getText(),
                     emailTextField.getText(),
@@ -105,6 +115,7 @@ public class PermitOfficerIssueNewPermitController {
                     Integer.parseInt(noOfVisitorsTextField.getText()),
                     visitDateDatePicker.getValue()
             );
+
 
             permitDataTableView.getItems().add(issuePermitToBeAdded);
             IssuePermitList.add(issuePermitToBeAdded);
@@ -136,6 +147,13 @@ public class PermitOfficerIssueNewPermitController {
             }
         }
 
+    }
+
+    public void addPrice(){
+
+        IssuePermit c1, c2;
+        c1 = new IssuePermit(permitTypeComboBox.getValue());
+        c2 = c1.CalculateTotal(c1);
     }
 
     @FXML

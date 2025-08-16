@@ -49,7 +49,7 @@
          </font>
       </Button>
       <Separator layoutY="376.0" prefHeight="6.0" prefWidth="600.0" />
-      <TableView fx:id="recordWorkLogTableView" layoutX="42.0" layoutY="407.0" prefHeight="200.0" prefWidth="522.0">
+      <TableView fx:id="recordWorkLogTableView" layoutX="42.0" layoutY="413.0" prefHeight="200.0" prefWidth="522.0">
         <columns>
           <TableColumn fx:id="issueIdTableColumn" prefWidth="75.0" text="Issue ID" />
           <TableColumn fx:id="startTimeTableColumn" prefWidth="75.0" text="Start Time" />
@@ -59,6 +59,11 @@
       </TableView>
       <Separator layoutX="1.0" layoutY="619.0" prefHeight="6.0" prefWidth="600.0" />
       <Button layoutX="243.0" layoutY="640.0" mnemonicParsing="false" onAction="#backToDashboardButton" style="-fx-background-color: teal;" text="Back to Dashboard" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="437.0" layoutY="383.0" mnemonicParsing="false" onAction="#viewAllButton" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: teal;" text="View All" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
