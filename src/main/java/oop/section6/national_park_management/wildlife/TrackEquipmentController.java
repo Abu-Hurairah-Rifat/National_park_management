@@ -14,5 +14,6 @@ public class TrackEquipmentController
 
     @javafx.fxml.FXML
     public void backToDashboard(ActionEvent actionEvent) {
+
     }
 }
