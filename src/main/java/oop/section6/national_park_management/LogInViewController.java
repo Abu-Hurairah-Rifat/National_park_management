@@ -96,6 +96,7 @@ public class LogInViewController {
             }
         }
 
+
         else if (CheckName.equals("Eco Tour Guide")  && CheckPassword.equals("1234")){
             try{
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("EcoTourGuide/eco_tour_guide_dashboard.fxml"));
