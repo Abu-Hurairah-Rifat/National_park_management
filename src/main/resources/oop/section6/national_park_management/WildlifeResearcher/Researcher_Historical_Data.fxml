@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wildlife.HistoricalDataController">
+    <children>
+        <Label layoutX="200.0" layoutY="20.0" text="Historical Data" textFill="WHITE">
+            <font><Font name="Times New Roman Bold" size="24.0"/></font>
+        </Label>
+
+        <Label layoutX="50.0" layoutY="70.0" text="Search:" textFill="WHITE"/>
+        <TextField fx:id="searchField" layoutX="120.0" layoutY="70.0" prefWidth="300.0"/>
+        <Button layoutX="450.0" layoutY="70.0" mnemonicParsing="false" onAction="#searchData" text="Search" style="-fx-background-color: teal;" textFill="WHITE"/>
+
+        <TableView fx:id="dataTable" layoutX="50.0" layoutY="120.0" prefHeight="300.0" prefWidth="500.0">
+            <columns>
+                <TableColumn text="Date" prefWidth="100"/>
+                <TableColumn text="Species" prefWidth="150"/>
+                <TableColumn text="Location" prefWidth="150"/>
+                <TableColumn text="Researcher" prefWidth="100"/>
+            </columns>
+        </TableView>
+
+        <Button layoutX="250.0" layoutY="440.0" mnemonicParsing="false" onAction="#backToDashboard" text="Back" style="-fx-background-color: teal;" textFill="WHITE" prefWidth="100.0"/>
+    </children>
+</AnchorPane>
