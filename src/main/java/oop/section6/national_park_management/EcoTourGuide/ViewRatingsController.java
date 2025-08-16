@@ -43,7 +43,7 @@ public class ViewRatingsController {
                 new Review(4, "Very good tour, professional and friendly."),
                 new Review(5, "Perfect experience, 10/10."),
                 new Review(3, "The tour was okay, but a bit rushed."),
-                new Review(4, "Knowledgeable guide, we saw a lot of wildlife.")
+                new Review(4, "Knowledgeable guide, we saw a lot of oop.section6.national_park_management.wildlife.")
         );
     }
 

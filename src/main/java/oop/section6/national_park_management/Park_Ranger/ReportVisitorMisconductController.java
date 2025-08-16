@@ -59,7 +59,7 @@ public class ReportVisitorMisconductController {
         misconductData.setAll(
                 new VisitorMisconduct("John Doe", "Littering", "Issued fine"),
                 new VisitorMisconduct("Jane Smith", "Off-trail hiking", "Verbal warning"),
-                new VisitorMisconduct("Mark Brown", "Feeding wildlife", "Expelled from park")
+                new VisitorMisconduct("Mark Brown", "Feeding oop.section6.national_park_management.wildlife", "Expelled from park")
         );
         misconductTable.setItems(misconductData);
     }

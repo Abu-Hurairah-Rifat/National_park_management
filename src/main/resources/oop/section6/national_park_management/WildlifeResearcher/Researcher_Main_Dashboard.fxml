@@ -8,7 +8,7 @@
 <AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: tan;"
             xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="oop.section6.national_park_management.WildlifeResearcher.ResearcherMainDashboard">
+            fx:controller="oop.section6.national_park_management.wildlife.ResearcherMainDashboard">
     <children>
         <Label layoutX="150.0" layoutY="30.0" text="Wildlife Researcher" textFill="WHITE">
             <font>
