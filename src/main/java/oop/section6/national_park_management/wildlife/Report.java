@@ -64,7 +64,6 @@ public class Report {
     }
 
     public void generateReportId() {
-        // This would typically be more sophisticated in a real application
         this.reportId = (int) (System.currentTimeMillis() % Integer.MAX_VALUE);
     }
 
