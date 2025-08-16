@@ -36,7 +36,7 @@ public class PermitOfficerReviewParkRegulationsAndPoliciesController {
                 "1. Wildlife (Preservation) Order of 1974 / National Park Notification (1996)\n" +
                 "\n" +
                 "Lawachara NP was legally declared in 1996 under the Wildlife (Preservation) Order of 1974,"+ "\n"+
-                "which serves as the foundation for park protection and conservation in Bangladesh.\n" +
+                "which serves as the foundation for park protection and oop.section6.national_park_management.conservation in Bangladesh.\n" +
                 "\n" +
                 "2. Simplified Management Guidelines (2006) – Nishorgo Support Project\n" +
                 "\n" +
@@ -57,7 +57,7 @@ public class PermitOfficerReviewParkRegulationsAndPoliciesController {
                 "\n" +
                 "According to visitor guidance sources, important rules include:\n" +
                 "No littering.\n" +
-                "Do not remove or disturb wildlife and plant life.\n" +
+                "Do not remove or disturb oop.section6.national_park_management.wildlife and plant life.\n" +
                 "Respect ecosystem boundaries and behavior guidelines.");
     }
 

@@ -3,7 +3,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wildlife.HistoricalDataController">
+<AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.wildlife.HistoricalDataController">
     <children>
         <Label layoutX="200.0" layoutY="20.0" text="Historical Data" textFill="WHITE">
             <font><Font name="Times New Roman Bold" size="24.0"/></font>
