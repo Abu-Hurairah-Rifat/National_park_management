@@ -49,7 +49,7 @@ public class AnalystDashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ConservatinDataAnalyst/Analyst_Audit_Data.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Lawachara National Park");
+            nextStage.setTitle("Lawachara NationalPark");
             nextStage.setScene(scene);
             nextStage.show();
         }
