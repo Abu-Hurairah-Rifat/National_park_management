@@ -108,19 +108,6 @@ public class MaintenanceWorkLogsController {
 
     }
 
-    public void initialize(){
-        workLogList = new ArrayList<>();
-
-        startDateDatepicker.setValue(LocalDate.now());
-        endDateDatepicker.setValue(LocalDate.now());
-
-        issueIdTableColumn.setCellValueFactory(new PropertyValueFactory<WorkLog, String>("issueId"));
-        startTimeTableColumn.setCellValueFactory(new PropertyValueFactory<WorkLog, String>("startDate"));
-        endTimeTableColumn.setCellValueFactory(new PropertyValueFactory<WorkLog, String>("endDate"));
-        detailsOfWorkPerformedTableColumn.setCellValueFactory(new PropertyValueFactory<WorkLog, String>("details"));
-
-    }
-
 
     @FXML
     public void viewAllButton(ActionEvent actionEvent) {
@@ -153,5 +140,18 @@ public class MaintenanceWorkLogsController {
                 //
             }
         }
+    }
+
+    public void initialize(){
+        workLogList = new ArrayList<>();
+
+        startDateDatepicker.setValue(LocalDate.now());
+        endDateDatepicker.setValue(LocalDate.now());
+
+        issueIdTableColumn.setCellValueFactory(new PropertyValueFactory<WorkLog, String>("issueId"));
+        startTimeTableColumn.setCellValueFactory(new PropertyValueFactory<WorkLog, String>("startDate"));
+        endTimeTableColumn.setCellValueFactory(new PropertyValueFactory<WorkLog, String>("endDate"));
+        detailsOfWorkPerformedTableColumn.setCellValueFactory(new PropertyValueFactory<WorkLog, String>("details"));
+
     }
 }
