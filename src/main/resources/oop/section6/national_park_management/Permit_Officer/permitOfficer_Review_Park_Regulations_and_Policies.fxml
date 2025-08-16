@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="524.0" prefWidth="602.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.section6.national_park_management.Permit_Officer.PermitOfficerReviewParkRegulationsAndPoliciesController">
    <children>
       <Label layoutX="103.0" layoutY="16.0" text="Park Regulations and Policies" textFill="WHITE">
@@ -15,7 +14,7 @@
          </font>
       </Label>
       <Separator layoutX="2.0" layoutY="69.0" prefHeight="3.0" prefWidth="600.0" />
-      <Label fx:id="parkRegulationsAndPoliciesLabel" layoutX="61.0" layoutY="108.0" prefHeight="338.0" prefWidth="481.0" textFill="WHITE">
+      <Label fx:id="parkRegulationsAndPoliciesLabel" alignment="TOP_LEFT" layoutX="61.0" layoutY="108.0" prefHeight="338.0" prefWidth="481.0" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

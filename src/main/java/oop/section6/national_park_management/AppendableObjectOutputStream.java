@@ -1,4 +1,4 @@
-package oop.section6.national_park_management.Permit_Officer;
+package oop.section6.national_park_management;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;

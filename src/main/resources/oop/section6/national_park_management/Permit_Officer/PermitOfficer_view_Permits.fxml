@@ -40,7 +40,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="showSearchResultLabel" layoutX="309.0" layoutY="96.0" prefHeight="64.0" prefWidth="258.0" style="-fx-background-color: White;" textFill="TEAL" />
+      <Label fx:id="showSearchResultLabel" alignment="TOP_LEFT" layoutX="309.0" layoutY="96.0" prefHeight="64.0" prefWidth="258.0" style="-fx-background-color: White;" textFill="TEAL" wrapText="true" />
       <Button layoutX="474.0" layoutY="172.0" mnemonicParsing="false" onAction="#viewDetailsButton" prefHeight="26.0" prefWidth="94.0" style="-fx-background-color: teal;" text="View Details" textFill="#fff7f7">
          <font>
             <Font name="System Bold" size="12.0" />
