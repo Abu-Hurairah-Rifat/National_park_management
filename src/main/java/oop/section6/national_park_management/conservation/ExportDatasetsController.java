@@ -8,6 +8,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import oop.section6.national_park_management.HelloApplication;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class ExportDatasetsController
 {
@@ -33,11 +35,24 @@ public class ExportDatasetsController
             nextStage.show();
         }
         catch (Exception e) {
-            //throw new RuntimeException(e);
         }
     }
 
     @javafx.fxml.FXML
     public void exportData(ActionEvent actionEvent) {
+        if (datasetCombo.getValue() == null) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("No Dataset Selected");
+            alert.setContentText("Please select a dataset to export.");
+            alert.showAndWait();
+            return;
+        }
+
+        Alert successAlert = new Alert(AlertType.INFORMATION);
+        successAlert.setTitle("Success");
+        successAlert.setHeaderText("Export Started");
+        successAlert.setContentText("Dataset export process has begun.");
+        successAlert.showAndWait();
     }
 }
