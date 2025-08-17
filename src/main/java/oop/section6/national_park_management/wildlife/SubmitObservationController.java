@@ -9,8 +9,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import oop.section6.national_park_management.HelloApplication;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Alert; // Add this import
+import javafx.scene.control.Alert.AlertType; // Add this import
 
 public class SubmitObservationController
 {
@@ -44,28 +44,12 @@ public class SubmitObservationController
 
     @javafx.fxml.FXML
     public void submit(ActionEvent actionEvent) {
-
-        if (speciesField.getText().isEmpty() || locationField.getText().isEmpty() || datePicker.getValue() == null) {
-
+        if (speciesField.getText().isEmpty() || locationField.getText().isEmpty()) {
             Alert alert = new Alert(AlertType.WARNING);
-            alert.setTitle("Missing Information");
-            alert.setHeaderText("Required fields are empty");
-            alert.setContentText("Please fill in all required fields:\n- Species\n- Location\n- Date");
-
+            alert.setTitle("Warning");
+            alert.setHeaderText("Missing Information");
+            alert.setContentText("Please fill in both species and location fields.");
             alert.showAndWait();
-        } else {
-
-            Alert successAlert = new Alert(AlertType.INFORMATION);
-            successAlert.setTitle("Success");
-            successAlert.setHeaderText("Observation Submitted");
-            successAlert.setContentText("Your wildlife observation has been recorded.");
-
-            successAlert.showAndWait();
-
-            speciesField.clear();
-            locationField.clear();
-            notesArea.clear();
-            datePicker.setValue(null);
         }
     }
 }
