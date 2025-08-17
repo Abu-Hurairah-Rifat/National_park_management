@@ -27,6 +27,7 @@ public class CompareTrendsController
 
     @javafx.fxml.FXML
     public void initialize() {
+
     }
 
     @javafx.fxml.FXML
@@ -40,7 +41,6 @@ public class CompareTrendsController
             nextStage.show();
         }
         catch (Exception e) {
-            //throw new RuntimeException(e);
         }
     }
 

@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import oop.section6.national_park_management.HelloApplication;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class TeamCollaborationController
 {
@@ -28,11 +30,23 @@ public class TeamCollaborationController
             nextStage.show();
         }
         catch (Exception e) {
-            //throw new RuntimeException(e);
         }
     }
 
     @javafx.fxml.FXML
     public void saveNotes(ActionEvent actionEvent) {
+        if (teamNotes.getText().trim().isEmpty()) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Empty Notes");
+            alert.setContentText("Please enter some notes before saving.");
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setHeaderText("Notes Saved");
+            alert.setContentText("Your team notes have been saved successfully.");
+            alert.showAndWait();
+        }
     }
 }
