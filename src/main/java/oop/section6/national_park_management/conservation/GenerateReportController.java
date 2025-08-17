@@ -48,7 +48,6 @@ public class GenerateReportController {
 
         alert.showAndWait();
 
-        // Optional: Clear the form after submission
         titleField.clear();
         contentArea.clear();
         referencesArea.clear();
